@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Project Navigate — Final Credit Diligence Package · creditswan.ai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>/* ◆ creditswan.ai — decision-grade document system
+   Palette: cold stone paper · swan-ink · carmine (severity) · graphite · hairline */
+:root{
+  --paper:#EFF0EB;
+  --panel:#F7F8F3;
+  --ink:#16191D;
+  --graphite:#565B61;
+  --line:#C7C9C0;
+  --carmine:#8E1F2F;
+  --carmine-08:rgba(142,31,47,.08);
+  --ink-05:rgba(22,25,29,.05);
+  --ink-10:rgba(22,25,29,.10);
+  --serif:"Besley",Georgia,"Times New Roman",serif;
+  --sans:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:16px;line-height:1.68;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--ink);color:var(--paper)}
+
+/* ── top bar ─────────────────────────────────────────────────────────── */
+.topbar{
+  position:fixed;inset:0 0 auto 0;z-index:50;height:46px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 20px;background:var(--ink);color:var(--paper);
+}
+.topbar-brand{
+  font-family:var(--serif);font-weight:700;font-size:15px;
+  color:var(--paper);text-decoration:none;letter-spacing:.02em;
+}
+.topbar-chips{display:flex;gap:8px}
+.chip{
+  font-size:10px;font-weight:600;letter-spacing:.12em;
+  padding:3px 9px;border:1px solid rgba(246,247,243,.4);
+  color:var(--paper);white-space:nowrap;
+}
+.chip-conf{border-color:#C4576A;color:#E9AEB8}
+.progress{position:fixed;top:46px;left:0;right:0;height:2px;background:transparent;z-index:50}
+.progress-bar{height:2px;width:0;background:var(--carmine)}
+@media (max-width:640px){.chip-rev{display:none}}
+
+/* ── document column ─────────────────────────────────────────────────── */
+.doc{
+  max-width:880px;margin:0 auto;
+  padding:92px 28px 96px;
+}
+@media (max-width:640px){.doc{padding:78px 16px 64px}}
+
+/* ── masthead ────────────────────────────────────────────────────────── */
+hr.heavy{
+  border:0;height:7px;background:var(--ink);margin:26px 0;
+}
+hr{border:0;border-top:1px solid var(--line);margin:34px 0}
+.brandmark{
+  font-family:var(--serif);font-weight:800;font-size:clamp(26px,4vw,34px);
+  letter-spacing:.01em;margin:8px 0 2px;
+}
+.tagline{
+  font-family:var(--sans);font-weight:600;font-size:12px;
+  letter-spacing:.18em;color:var(--graphite);margin:0 0 8px;
+  text-transform:uppercase;
+}
+.doctitle{
+  font-family:var(--serif);font-weight:900;
+  font-size:clamp(42px,7vw,68px);line-height:1.02;
+  letter-spacing:-.015em;margin:26px 0 6px;
+}
+.docsub{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  font-size:clamp(17px,2.4vw,21px);color:var(--graphite);margin:0 0 22px;
+}
+
+/* ── headings ────────────────────────────────────────────────────────── */
+h1.part{
+  font-family:var(--serif);font-weight:900;font-size:clamp(26px,4vw,36px);
+  letter-spacing:.01em;margin:64px 0 4px;
+  padding-top:22px;border-top:7px solid var(--ink);
+}
+h1:not(.part):not(.brandmark):not(.doctitle){
+  font-family:var(--serif);font-weight:800;font-size:28px;margin:48px 0 12px;
+}
+h2{
+  font-family:var(--serif);font-weight:700;font-size:clamp(22px,3vw,27px);
+  line-height:1.25;margin:52px 0 14px;
+}
+h2::before{
+  content:"";display:block;width:44px;height:4px;background:var(--ink);
+  margin-bottom:12px;
+}
+h3{
+  font-family:var(--serif);font-weight:600;font-size:19px;margin:34px 0 10px;
+}
+h4,h5{
+  font-family:var(--sans);font-weight:700;font-size:12.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--graphite);
+  margin:26px 0 8px;
+}
+p{margin:0 0 14px}
+strong{font-weight:700}
+em{font-style:italic}
+del{color:var(--graphite);text-decoration-color:var(--carmine)}
+a{color:var(--ink);text-decoration-color:var(--line);text-underline-offset:3px}
+a:hover{text-decoration-color:var(--carmine)}
+:focus-visible{outline:2px solid var(--carmine);outline-offset:2px}
+
+code{
+  font-family:var(--mono);font-size:.84em;background:var(--ink-05);
+  border:1px solid var(--ink-10);padding:1px 5px;border-radius:2px;
+  white-space:nowrap;
+}
+
+/* ── contents nav ────────────────────────────────────────────────────── */
+.contents{
+  border:1px solid var(--ink);background:var(--panel);
+  padding:20px 22px;margin:26px 0 8px;
+}
+.contents-label{
+  font-family:var(--sans);font-weight:700;font-size:11px;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--graphite);
+  margin-bottom:12px;
+}
+.contents-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px 28px}
+@media (max-width:640px){.contents-grid{grid-template-columns:1fr}}
+.contents a{display:block;text-decoration:none;padding:3px 0;font-size:13.5px}
+.contents a:hover{color:var(--carmine)}
+a.nav-part{
+  font-family:var(--serif);font-weight:800;font-size:14px;
+  margin-top:8px;letter-spacing:.02em;
+}
+a.nav-sec{color:var(--graphite);border-top:1px solid transparent}
+a.nav-sec:hover{color:var(--carmine)}
+
+/* ── tables ──────────────────────────────────────────────────────────── */
+.tbl{overflow-x:auto;margin:18px 0 22px;border:1px solid var(--line);background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:13.5px;line-height:1.5}
+thead th{
+  font-family:var(--sans);font-weight:700;font-size:10.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--graphite);
+  text-align:left;border-bottom:2px solid var(--ink);
+  padding:10px 12px;background:var(--panel);
+}
+tbody td{
+  padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top;
+  font-variant-numeric:tabular-nums;
+}
+tbody tr:last-child td{border-bottom:0}
+td strong,th strong{font-weight:700}
+
+/* ── evidence-tag chips: treatment encodes evidentiary weight ────────── */
+.tag{
+  display:inline-block;font-family:var(--sans);font-size:10px;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;line-height:1;
+  padding:3px 7px;border-radius:2px;vertical-align:baseline;white-space:nowrap;
+}
+.tag-verified{background:var(--ink);color:var(--paper)}
+.tag-ares{border:1.5px solid var(--ink);color:var(--ink)}
+.tag-seller{border:1px solid var(--graphite);color:var(--graphite)}
+.tag-blocking{background:var(--carmine);color:#F6E9EB}
+.tag-quarantine{border:1.5px dashed var(--graphite);color:var(--graphite)}
+.tag-external{border:1px dotted var(--graphite);color:var(--graphite)}
+
+/* ── blockquote system ───────────────────────────────────────────────── */
+.bq{margin:20px 0;padding:16px 20px;font-size:15px}
+.bq p:last-child{margin-bottom:0}
+.bq-note{border-left:3px solid var(--line);background:var(--panel)}
+.bq-warn{border-left:4px solid var(--carmine);background:var(--carmine-08)}
+.bq-governs{
+  border-left:4px solid var(--ink);background:var(--panel);
+  box-shadow:inset 0 0 0 1px var(--ink-10);
+}
+.bq-rev2{
+  border:1px solid var(--ink);border-left:7px solid var(--ink);
+  background:var(--panel);padding:20px 24px;
+}
+.bq-rev2 h3{margin-top:0}
+
+/* the signature: the verdict instrument */
+.bq-verdict{
+  border:1px solid var(--ink);outline:1px solid var(--ink);outline-offset:3px;
+  background:var(--panel);padding:24px 28px;margin:30px 0;
+}
+.bq-verdict h2{margin:10px 0;font-size:clamp(17px,2.6vw,21px);line-height:1.35}
+.bq-verdict h2::before{display:none}
+h2.v-proceed{color:var(--ink)}
+h2.v-decline{color:var(--carmine)}
+h2.v-superseded{
+  color:var(--graphite);
+  background:repeating-linear-gradient(-45deg,transparent 0 6px,var(--ink-05) 6px 8px);
+  padding:6px 10px;border:1px dashed var(--line);
+}
+.bq-verdict hr{border-top:1px solid var(--line);margin:18px 0}
+
+/* ── print ───────────────────────────────────────────────────────────── */
+@media print{
+  .topbar,.progress{display:none}
+  body{background:#fff;font-size:11.5pt}
+  .doc{padding:0;max-width:none}
+  .tbl{overflow:visible;border-color:#999}
+  tr,blockquote{break-inside:avoid}
+  a{text-decoration:none;color:#000}
+}
+</style>
+</head>
+<body>
+<header class="topbar" role="banner">
+  <a class="topbar-brand" href="#top">◆ creditswan.ai</a>
+  <div class="topbar-chips">
+    <span class="chip chip-rev">REV 2 · 27 JUL 2026</span>
+    <span class="chip chip-conf">CONFIDENTIAL — ARES INTERNAL</span>
+  </div>
+</header>
+<div class="progress" aria-hidden="true"><div class="progress-bar" id="pbar"></div></div>
+<main id="top" class="doc">
+<hr class="heavy">
+<h1 class="brandmark">◆ creditswan.ai</h1>
+<p class="tagline">D E C I S I O N · G R A D E    C R E D I T    D I L I G E N C E</p>
+<hr class="heavy">
+<h1 class="doctitle">PROJECT NAVIGATE</h1>
+<p class="docsub">Final Credit Diligence Package — Prepared for Ares Credit</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th></th>
+  <th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Prepared for</strong></td>
+  <td>Ares Credit — Investment Committee &amp; Deal Team</td>
+</tr>
+<tr>
+  <td><strong>Prepared by</strong></td>
+  <td>creditswan.ai</td>
+</tr>
+<tr>
+  <td><strong>Date</strong></td>
+  <td>26 July 2026 · <strong>REVISION 2 — 27 July 2026</strong></td>
+</tr>
+<tr>
+  <td><strong>Built from VDR drop</strong></td>
+  <td><strong>7.23.26 / 7.25.26</strong> + <strong><code>Sponsor Materials/</code> (9–26 Jul 2026)</strong> + <strong><code>Marketing Materials/</code></strong> — re-walked 27 Jul: both <code>z. New Files</code> folders unchanged; two root folders newly indexed</td>
+</tr>
+<tr>
+  <td><strong>Engagement scope</strong></td>
+  <td>Full-room diligence, Phases 0–7 complete. 1,306 files / 350 folders indexed and walked end to end, plus 7 sponsor- and seller-side documents at Revision 2</td>
+</tr>
+<tr>
+  <td><strong>Classification</strong></td>
+  <td><strong>CONFIDENTIAL — ARES INTERNAL.</strong> Contains material derived from a live auction VDR</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="bq bq-note">
+<p><strong>This document is self-contained.</strong> It carries the recommendation, the full analysis, the complete consolidated seller ask, all internal action items, and all caveats. The underlying working papers (Phase 0–7 files, master request register, model grid) remain in the engagement workspace and are available on request.</p>
+</blockquote>
+<hr />
+<blockquote class="bq bq-rev2">
+<h3>⟐ REVISION 2 — 27 JULY 2026</h3>
+<p>Seven sponsor- and seller-side documents were received after Revision 1 and are digested in full at <strong><code>ADDENDUM_B_SPONSOR_MATERIALS.md</code></strong>. Five things moved:</p>
+<ol>
+<li><strong>⚠ THE UNDERWRITING BASE FALLS FROM ~$103MM TO ~$75MM.</strong> A8 is closed: the Costco private-label loss is real, quantified in the sponsor's own model at <strong>$(27.6)–(29.9)MM</strong> across four SKUs, dated 2026 and therefore inside the LTM at a 2027 close. It was quarantined and excluded from every Revision 1 figure. It now enters the base.</li>
+<li><strong>Free cash flow is negative in every case at the frame, including the high case</strong> — years 1–3 read <strong>$(154) / $(82) / $(14)</strong> against Revision 1's $(105) / $(36) / +27. <strong>The attachment range is re-derived at §1 below: 1L $185–225MM (2.5–3.0x post-Costco), not $410–575MM</strong> — full derivation at <code>PHASE_7_SYNTHESIS.md</code> §14 and <code>PHASE_7_MODEL_GRID_R2.csv</code>.</li>
+<li><strong>The sponsor is Yellow Wood Partners; the sell-side bank is Morgan Stanley.</strong> Both previously unconfirmed; both now evidenced from document content (CIP and Management Presentation watermarks; lender model footnotes; Morgan Stanley disclaimer).</li>
+<li><strong>The seller and the buyer do not agree on the asset.</strong> The seller's plan reaches <strong>$237MM</strong> of 2030E EBITDA; the sponsor's own lender model reaches <strong>$135MM</strong> — 75% apart. On the three items where all parties disagree, <strong>the sponsor sides with Ares against the seller every time.</strong> The Ares–sponsor gap itself is unchanged at ~$59–61MM.</li>
+<li><strong>Three cost figures revised upward</strong> — one-time separation to <strong>$90–120MM</strong> (sponsor carries $116.6MM vs seller $44MM), the rLTMA cliff to <strong>$30–34MM p.a.</strong>, plus a newly identified <strong>$(28.0)MM</strong> ERP safety-stock build in 2028.</li>
+</ol>
+<p><strong>No hypothesis reversed; all seven strengthened.</strong> Figures superseded are listed at Addendum B §7; the revised bridge is at Addendum B §4.9. Where this document and Addendum B conflict, <strong>Addendum B governs.</strong></p>
+</blockquote>
+<p><strong>How to read the tags used throughout:</strong></p>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>Tag</th>
+  <th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong><span class="tag tag-seller">SELLER</span></strong></td>
+  <td>The seller's stated figure or claim — presented to be tested, never adopted</td>
+</tr>
+<tr>
+  <td><strong><span class="tag tag-ares">ARES VIEW</span></strong></td>
+  <td>creditswan.ai's independent underwriting judgment, built from source evidence</td>
+</tr>
+<tr>
+  <td><strong><span class="tag tag-verified">VERIFIED</span></strong></td>
+  <td>Reproduced from a native VDR file, tied to the cell / page cited</td>
+</tr>
+<tr>
+  <td><strong><span class="tag tag-blocking">BLOCKING</span></strong></td>
+  <td>A gap the room cannot answer; only the seller can</td>
+</tr>
+<tr>
+  <td><strong><span class="tag tag-quarantine">EXTRA-ROOM — QUARANTINED</span></strong></td>
+  <td>Intelligence from outside the VDR; excluded from every figure unless stated</td>
+</tr>
+<tr>
+  <td><strong><span class="tag tag-external">EXTERNAL</span></strong></td>
+  <td>Public-source market research, clearly separated from VDR evidence</td>
+</tr>
+</tbody>
+</table></div>
+<nav class="contents" aria-label="Contents"><div class="contents-label">Contents</div><div class="contents-grid"><a class="nav-part" href="#s-part-i-decision">PART I — DECISION</a><a class="nav-sec" href="#s-1-recommendation">1 · RECOMMENDATION</a><a class="nav-sec" href="#s-2-the-deal-at-a-glance">2 · THE DEAL AT A GLANCE</a><a class="nav-sec" href="#s-3-the-three-credit-questions-answered">3 · THE THREE CREDIT QUESTIONS — ANSWERED</a><a class="nav-part" href="#s-part-ii-the-numbers">PART II — THE NUMBERS</a><a class="nav-sec" href="#s-4-ebitda-from-the-seller-s-number-to-ours">4 · EBITDA — FROM THE SELLER&#x27;S NUMBER TO OURS</a><a class="nav-sec" href="#s-5-free-cash-flow-the-bridge-the-cip-does-not-show">5 · FREE CASH FLOW — THE BRIDGE THE CIP DOES NOT SHOW</a><a class="nav-sec" href="#s-6-model-grid-three-cases-mm">6 · MODEL GRID — THREE CASES ($MM)</a><a class="nav-sec" href="#s-7-the-downside-is-a-calendar-not-a-sensitivity">7 · THE DOWNSIDE IS A CALENDAR, NOT A SENSITIVITY</a><a class="nav-sec" href="#s-8-recovery">8 · RECOVERY</a><a class="nav-part" href="#s-part-iii-structure-amp-conditions">PART III — STRUCTURE &amp;amp; CONDITIONS</a><a class="nav-sec" href="#s-9-structure-recommendation">9 · STRUCTURE RECOMMENDATION</a><a class="nav-sec" href="#s-10-conditions-tiered-each-tied-to-a-register-number">10 · CONDITIONS — TIERED, EACH TIED TO A REGISTER NUMBER</a><a class="nav-part" href="#s-part-iv-the-ask">PART IV — THE ASK</a><a class="nav-sec" href="#s-11-the-single-consolidated-seller-ask">11 · THE SINGLE CONSOLIDATED SELLER ASK</a><a class="nav-sec" href="#s-12-ares-internal-actions-not-part-of-the-seller-ask">12 · ARES INTERNAL ACTIONS (not part of the seller ask)</a><a class="nav-part" href="#s-part-v-evidence-base-integrity-amp-caveats">PART V — EVIDENCE BASE, INTEGRITY &amp;amp; CAVEATS</a><a class="nav-sec" href="#s-13-hypothesis-verdicts-final">13 · HYPOTHESIS VERDICTS — FINAL</a><a class="nav-sec" href="#s-14-structural-amp-legal-findings-what-the-transaction-docume">14 · STRUCTURAL &amp;amp; LEGAL FINDINGS — WHAT THE TRANSACTION DOCUMENTS ACTUALLY SAY</a><a class="nav-sec" href="#s-15-commercial-operational-amp-people-evidence-the-condensed-">15 · COMMERCIAL, OPERATIONAL &amp;amp; PEOPLE EVIDENCE — THE CONDENSED RECORD</a><a class="nav-sec" href="#s-16-market-context-external-public-source-research-separate-f">16 · MARKET CONTEXT — [EXTERNAL] public-source research, separate from VDR evidence</a><a class="nav-sec" href="#s-17-vdr-integrity-data-quality-amp-sensitive-materials">17 · VDR INTEGRITY, DATA QUALITY &amp;amp; SENSITIVE MATERIALS</a><a class="nav-sec" href="#s-18-methodology-amp-engagement-standard">18 · METHODOLOGY &amp;amp; ENGAGEMENT STANDARD</a></div></nav>
+<hr />
+<hr />
+<h1 id="s-part-i-decision" class="part">PART I — DECISION</h1>
+<hr />
+<h2 id="s-1-recommendation">1 · RECOMMENDATION</h2>
+<blockquote class="bq bq-verdict">
+<h2 class="v-proceed v-superseded">✔ PROCEED WITH CONDITIONS — at a first lien of <strong>$410–575MM</strong> — <strong>⚠ UNDER RE-DERIVATION AT REV 2</strong></h2>
+<h2 class="v-decline">✘ DECLINE — at the working frame of <strong>$700–775MM</strong></h2>
+<p><strong>This is a decline on the attachment point, not on the asset.</strong></p>
+<p>At <strong>4.0–4.5x</strong> of a corrected standalone EBITDA of <strong>~$103MM</strong>, with separation cost <strong>equity-funded</strong> and the covenant package at §9, the credit clears: thin but positive free cash flow, and 60–100% recovery.</p>
+<hr />
+<p><strong>⚠ REVISION 2 — RE-DERIVED 27 JUL (deal-team instruction).</strong> Closing A8 moves the Costco private-label loss into the base and takes corrected EBITDA from <strong>~$103MM to ~$75MM</strong>. The re-run is at <code>PHASE_7_SYNTHESIS.md</code> §14 and <code>PHASE_7_MODEL_GRID_R2.csv</code>. The re-derived recommendation:</p>
+<h2 class="v-proceed">✔ PROCEED WITH CONDITIONS — at a first lien of <strong>$185–225MM</strong> (2.5–3.0x post-Costco base; the top $40MM conditional on the rLTMA cliff landing at +30m or later)</h2>
+<h2 class="v-decline">✘ DECLINE — at <strong>$250MM and above</strong> (the post-cliff test fails at every sweep speed) and at the A9 frame of <strong>$700–775MM</strong> (now 9.3–10.3x; negative FCF in every year of the facility's life)</h2>
+<p>The binding constraint changed: with the full one-time stack equity-funded ($133–178MM: separation + catch-up capex + ERP build), years 1–3 clear to ~$340MM — but the <strong>post-cliff year</strong> caps standing debt at <strong>~$185MM</strong> when the rLTMA rolls off. A $200MM facility with a 100% sweep clears every period (~$21.5MM yrs 1–3, ~$24.5MM yr 4, ~$4MM post-cliff after sweep); nothing larger than $225MM does. At this attachment the loan is <strong>collateral-covered (1.3–2.9x asset cover, ~100% recovery), not cash-flow-covered</strong> — the mild downside ($12MM EBITDA) no longer covers interest on any facility above ~$120MM, so #73 and #33 now price the entire thesis, and an asset-coverage test with springing appraisal rights joins the covenant package. <strong>Commercial reality, stated plainly: $185–225MM of debt against any plausible EV implies an equity cheque beyond the sponsor's $750MM fund without heavy co-invest (#86); Ares may well lose the deal at its price — on this arithmetic, that is the correct outcome.</strong></p>
+<p>At <strong>6.8–7.5x</strong> it does not: cash interest alone consumes <strong>63% of corrected EBITDA before a dollar of capex</strong>; free cash flow is <strong>negative through the entire separation period</strong>; the facility does not de-lever; and a single Costco reset — the most likely adverse event in the file — takes leverage past 25x.</p>
+<p><strong>Four blocking gaps are absolute conditions. If #14, #73, #69 and #29 are not answered, the recommendation is DECLINE at any attachment</strong> — not because the answers are presumed adverse, but because the Committee would be voting on an estimate. A flagged gap beats a guess. <strong>[Rev 2: the absolute set is now #14 · #73 · #29 · #86 — #69 downgrades to High (Nielsen/Stackline/panel data in hand; the seller's own p 90 discloses the channel unwind; residual = Costco POS and retailer inventories) and #86, the sponsor's absent capital structure, joins as blocking. #33 is elevated alongside #73.]</strong></p>
+</blockquote>
+<p><strong>One item is time-sensitive above all others — A6 [REVISED, Rev 2]:</strong> if any indicative leverage has been communicated on the seller's $164MM EBITDA, <strong>withdraw and reset it now.</strong> A 5.0x indication on $164MM is $820MM — <strong>8.0x on the corrected base.</strong></p>
+<blockquote class="bq bq-note">
+<p><strong>The anchor has already broken — but not in our favour.</strong> The sponsor's own lender model no longer carries $164MM: after deducting the Costco private-label loss it markets <strong>$136.5MM (2025) / $134.2MM (2026)</strong>. That removes the seller's number as a live anchor, but it does <strong>not</strong> close the Ares–sponsor gap, which holds at <strong>~$59–61MM</strong> once both sides are struck on the same basis. The sponsor still carries <strong>$29.1MM</strong> of initiative benefit its own footnotes call <em>&quot;subject to further diligence.&quot;</em></p>
+<p><strong>The residual A6 task is now twofold:</strong> reset any $164MM-anchored indication, <strong>and</strong> re-derive the attachment off the revised <strong>~$75MM</strong> base at Addendum B §4.0 before any number is given. A 5.0x indication on $164MM is $820MM — <strong>10.9x on the revised base.</strong></p>
+</blockquote>
+<hr />
+<h2 id="s-2-the-deal-at-a-glance">2 · THE DEAL AT A GLANCE</h2>
+<p><strong>The asset.</strong> Nestlé Health Science's &quot;Holistic Health&quot; unit — a mainstream vitamins, minerals &amp; supplements (VMS) business — sold via auction as a carve-out of <strong>NHS U.S., LLC</strong> (Delaware), with Puritan's Pride, LLC beneath it and nuun &amp; Company, Inc. intended to sit alongside. Seven owned/operated manufacturing and packaging sites plus warehouses; ~2,641 census FTE.</p>
+<p><strong>Perimeter brands — confirmed from the IATA §1.1 definition <span class="tag tag-verified">VERIFIED</span>:</strong> Nature's Bounty, Osteo Bi-Flex, Puritan's Pride (GCR only; US winding down), Sisu, IBgard/FDgard (GARD), Nuun, Ester-C — <strong>plus private label expressly inside the perimeter</strong>, with Costco, Kroger and Walmart named in the definition itself.</p>
+<p><strong>2025A financial shape [SELLER, sourced]:</strong></p>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>Metric</th>
+  <th>Value</th>
+  <th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Net sales (brand build)</td>
+  <td><strong>$1,222MM</strong> — NB $788 · PL $223 · OBF $84 · Nuun $57 · GARD $28 · PP-GCR $24 · Sisu $9 · Ester-C $8</td>
+  <td>CIP p3/p32/p94</td>
+</tr>
+<tr>
+  <td>Net sales (standalone adj.)</td>
+  <td><strong>$1,227.9MM</strong>, ~flat ex a disclosed ~$24MM pull-forward</td>
+  <td>Vol 4 databook / CIP p94 n.1</td>
+</tr>
+<tr>
+  <td>Standalone adj. EBITDA</td>
+  <td><strong>$164.1MM</strong> (CIP/Vol 2) / <strong>$166.2MM</strong> (Vol 4) — two vintages, see §4</td>
+  <td>CIP p106 / <code>1.3.37</code></td>
+</tr>
+<tr>
+  <td>Jan–May 2026 net sales</td>
+  <td><strong>−1.6% YoY</strong></td>
+  <td><code>1.3.37</code>/<code>1.3.39</code></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Process context [EXTERNAL — see §16]:</strong> review announced 24 Jul 2025; reconfirmed under CEO Navratil; reported &quot;officially underway&quot; May 2026 with ~$150–160M EBITDA (Axios Pro); classified <strong>&quot;assets held for sale&quot;</strong> at H1-2026 results (23 Jul 2026) with a <strong>CHF 1.3bn non-cash write-down</strong>. Nestlé is a motivated seller. Nestlé paid <strong>$5.75bn in 2021</strong> (3.1x sales / 16.8x EBITDA, 18.3% margin, perimeter then included Solgar — now retained).</p>
+<p><strong>Sponsor <span class="tag tag-quarantine">EXTRA-ROOM — QUARANTINED</span>:</strong> both VDR marketing files are watermarked <strong>Yellow Wood</strong> — not proof of a winning bidder. Independent research confirms <strong>no public reporting names any bidder</strong> (see §16). Note for the file: ISOPURE was a Glanbia acquisition (2014), not a Yellow Wood deal.</p>
+<hr />
+<h2 id="s-3-the-three-credit-questions-answered">3 · THE THREE CREDIT QUESTIONS — ANSWERED</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>#</th>
+  <th>Question</th>
+  <th>Answer</th>
+  <th>Base</th>
+  <th>Governing gap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Q1</strong></td>
+  <td>Is this EBITDA durable, or a melting ice cube sold at the seller's optimal moment?</td>
+  <td><strong>A melting ice cube, temporarily re-frozen — sold at the moment the re-freeze looks best.</strong> Durable EBITDA <strong>$85–120MM</strong>, declining 1–3% p.a.; ~$83MM after the rLTMA cliff</td>
+  <td><strong>~$103MM</strong></td>
+  <td><strong>#69</strong> — consumption data absent for ~70% of sales</td>
+</tr>
+<tr>
+  <td><strong>Q2</strong></td>
+  <td>What is free cash flow after separation, standalone cost, capex and working capital?</td>
+  <td><strong>Negative through the separation period at the working frame: $(105)MM to $27MM over years 1–3.</strong> Positive only at the recommended attachment with separation equity-funded: $(10) to $30MM</td>
+  <td><strong>$(36)MM</strong> at frame / <strong>$7MM</strong> as recommended</td>
+  <td><strong>#10/#58/#6</strong> — no TSA documentation exists at any ID</td>
+</tr>
+<tr>
+  <td><strong>Q3</strong></td>
+  <td>If the credit breaks, what is recovery — and how much depends on shelf space a distressed operator would lose?</td>
+  <td><strong>39–86% at the frame (base ~55–65%); 60–100% as recommended. Most of the upper half is brand value tied to shelf space — and the event that causes default is the same event that destroys the distribution.</strong> Recovery and default probability are <em>positively correlated</em></td>
+  <td>~55–65% / ~90–100%</td>
+  <td><strong>#73</strong> — impairment push-down; worth 8–12 recovery points (~$60–90MM)</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Q1 expanded — nine markers that the timing is the seller's, not the market's</h3>
+<ol>
+<li>FY24 carries <strong>+$69.1MM</strong> of diligence adjustments; the most recent twelve months carry <strong>−$9.5MM</strong>. The apparent climb from $33MM to $174MM of standalone EBITDA is <strong>adjustment asymmetry</strong>, not four years of operating improvement. [VERIFIED — Vol 4 datacube rebuild]</li>
+<li><strong>$9.3MM of unearned, execution-contingent savings</strong> sit inside the 2025A &quot;actual&quot; — $4.2MM contingent on an ERP not yet built, $5.1MM on a Puritan's wind-down completing Q1-2027. [CIP p99]</li>
+<li><strong>~$24MM of orders pulled forward</strong> from 2026, disclosed in a footnote, left in the number. <strong>No pro-forma line removes it.</strong> At the 50.8% contribution rate, ~$12MM of margin sits in 2025 that belongs to 2026.</li>
+<li><strong>December-2025 shipment-led load-in</strong>: +$12.6MM YoY at Walmart/CVS/Amazon/Kroger while Walmart consumption was flat; CVS then shipped <strong>$0.2MM and $1.0MM</strong> in January and February 2026. [<code>1.3.39</code>, <code>1.5.24</code>]</li>
+<li>A <strong>two-year, $126.4MM audited working-capital liquidation</strong> ($67.4MM FY24 + $58.9MM FY25) presented as &quot;disciplined working capital management&quot; — with a <strong>further $10MM release underwritten for 2026E</strong>. Finished goods fell 29.8%. [<code>1.3.17</code> p6/p8]</li>
+<li>A <strong>13.7-day DSO compression</strong> (59.5 → 45.8 days) presented as a flat 48-day steady state. You can collect faster once. Expected credit losses rose <strong>5x to 1.41%</strong> of a shrinking book, driven — per the auditors' own note — by <em>&quot;negotiations about variable consideration&quot;</em>: trade-spend dispute with retailers.</li>
+<li><strong>FY25 IT capex frozen at $2.2MM</strong> against $23.3MM (FY23) and $14.9MM (FY24) — a pre-sale freeze on the systems estate the buyer inherits. [<code>1.11.6.1</code>]</li>
+<li>The <strong>co-manufacturing base was re-papered during the sale process</strong> — seven agreements executed or amended Nov-2025 → May-2026, change-of-control terms unread. [<code>1.8.1.1</code>]</li>
+<li><strong>The seller's own QoE grew between drafts.</strong> Between the Volume 2 and Volume 4 vintages, FY24 EBITDA gained <strong>+$4.4MM</strong> via a $2.2MM increase to the least-supported adjustment in the set and a <strong>new $2.49MM &quot;audit adjustment&quot;</strong> absent from the earlier vintage entirely. Both moves run the seller's way, in the year that anchors the improvement narrative. [<code>1.3.6</code> vs <code>1.3.37</code> — VERIFIED]</li>
+</ol>
+<p><strong>What is genuinely durable — stated fairly:</strong> Walmart's Nature's Bounty growth is consumption-led (POS +101% vs shipments +62%, Jan–May 2026); Costco is +8.0% with zero adjustments in its history; and the category itself grows — <strong>at the premium, science-backed end, which is not where these brands sit.</strong> No perimeter brand holds more than 2.1% of the US vitamin market [EXTERNAL — Euromonitor via Reuters]. The book is re-freezing around <strong>three retailers (68.9% of net sales)</strong> and a handful of trend SKUs (magnesium glycinate, berberine) whose Walmart velocity <strong>crested in January 2026 and has declined every four-week period since</strong>. That is a concentration trade, not durability.</p>
+<h3>Q2 expanded — the number the seller does not show</h3>
+<p>The seller's headline metric is <strong>127.5% &quot;FCF conversion.&quot;</strong> Its own definition (CIP p94 n.8) — adjusted EBITDA − capex + the working-capital release — is struck <strong>before cash interest, before cash taxes, before the $10MM Puritan's exit and before the $34MM standalone IT build</strong>. It is not a credit metric, and it is excluded from this analysis by standing decision. The same business, measured the way a lender is repaid, produces <strong>negative $36MM per year through separation</strong> at the working frame (full bridge at §5).</p>
+<h3>Q3 expanded — why recovery is fragile exactly when it is needed</h3>
+<p>Nature's Bounty <strong>cannot be separated from the seven-site network</strong> (43–66% of every factory, 36–50% of both pack sites), so recovery is modelled as <strong>NB + the network as one unit</strong>, with tail brands as <strong>assignable contracts net of consent and transition cost</strong> — not an asset sale (Nuun is 0% in-house; GARD &lt;1%). IATA §2.14 prices consent failure against the buyer: pass-through benefit dies at the first contract expiration, and Nestlé does not remain secondarily liable. A distressed operator loses the line review; Costco's assortment already contracted from 60 to 43 active items even as sales rose; the tail brands need <strong>18–29% of sales in marketing</strong> to hold position — the first spend a distressed operator cuts. And <strong>no IP schedules of any kind exist in the room</strong>: registered marks, jurisdictions and encumbrances are unknown, on a credit whose recovery case is a brand.</p>
+<hr />
+<hr />
+<h1 id="s-part-ii-the-numbers" class="part">PART II — THE NUMBERS</h1>
+<hr />
+<h2 id="s-4-ebitda-from-the-seller-s-number-to-ours">4 · EBITDA — FROM THE SELLER'S NUMBER TO OURS</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>Basis</th>
+  <th style="text-align:right">FY25 $MM</th>
+  <th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong><span class="tag tag-seller">SELLER</span></strong> CIP p106 / Volume 2 QoE / <code>1.3.32</code></td>
+  <td style="text-align:right"><strong>164.1</strong></td>
+  <td>Not adopted</td>
+</tr>
+<tr>
+  <td><strong><span class="tag tag-seller">SELLER</span></strong> Volume 4 databook (later vintage, May-26)</td>
+  <td style="text-align:right"><strong>166.2</strong></td>
+  <td>Not adopted</td>
+</tr>
+<tr>
+  <td><strong><span class="tag tag-ares">ARES VIEW</span></strong> Independent standalone adjusted</td>
+  <td style="text-align:right"><strong>115–145 · base ~128</strong></td>
+  <td>Phase 2 rebuild from the native datacube</td>
+</tr>
+<tr>
+  <td><strong><span class="tag tag-ares">ARES VIEW</span></strong> <strong>Corrected standalone</strong> (post H7 / insurance / Globe)</td>
+  <td style="text-align:right"><strong>72–136 · base ~103</strong></td>
+  <td><strong>Governs the model</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3>4.1 Step one: $164/166 → $128 — the independent rebuild</h3>
+<p>Rebuilt transaction-by-transaction from the seller's own native Volume 4 datacube (13,760 rows), not accepted from the walk. The FY25 bridge from the databook's 166.2:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>Adjustment tested</th>
+  <th style="text-align:right">$MM</th>
+  <th>Verdict &amp; evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Unearned savings booked into 2025A</td>
+  <td style="text-align:right">(9.3)</td>
+  <td><strong>Reject</strong> — ERP- and 2027-contingent (CIP p99)</td>
+</tr>
+<tr>
+  <td>Pull-forward timing (~$24MM @ 50.8% MC)</td>
+  <td style="text-align:right">(12.2)</td>
+  <td><strong>Reject</strong> — disclosed, never removed</td>
+</tr>
+<tr>
+  <td>Waste &quot;normalization&quot; add-back</td>
+  <td style="text-align:right">(13.3)</td>
+  <td><strong>Reject</strong> — seller's own file shows waste running $27.6MM (FY25 restated actual) and $24.9MM (2026 LE) vs. add-backs of $16.1/$18.3MM. The add-back implies a normalized level ~⅓ of management's own forward estimate. Two positions that cannot both stand</td>
+</tr>
+<tr>
+  <td>Phantom share plan</td>
+  <td style="text-align:right">(3.0)</td>
+  <td><strong>Reject</strong> — the cost changes form (buyer LTIP), not existence</td>
+</tr>
+<tr>
+  <td>Standalone IT credit, 50% haircut</td>
+  <td style="text-align:right">(7.7)</td>
+  <td><strong>Haircut</strong> — the seller books standalone IT <strong>$15–25MM p.a. below</strong> the Nestlé allocation while the target retains exactly <strong>one IT contract (a Shopify invoice)</strong> and needs $34MM of capex to build the environment that would earn the saving</td>
+</tr>
+<tr>
+  <td>Offsetting acceptances / rounding</td>
+  <td style="text-align:right">+7</td>
+  <td></td>
+</tr>
+<tr>
+  <td><strong>Base</strong></td>
+  <td style="text-align:right"><strong>~128</strong></td>
+  <td></td>
+</tr>
+</tbody>
+</table></div>
+<p>Further items held, not accepted: <strong>inventory obsolescence +$20.6MM (FY24)</strong> — the audited NRV allowance <em>fell</em> $13.0MM over the same two years, meaning net releases flattered COGS while the charge was added back: one-way treatment; and <strong>&quot;non-recurring fees and penalties&quot; +$15.0MM (FY24)</strong> — a pure revenue gross-up, coded to customer &quot;Others&quot; in every month while every other adjustment is attributed, recurring <strong>FY24 / FY25 / FY26</strong> ($14.97 / $2.14 / $0.76MM).</p>
+<p><strong>The two-vintage finding [VERIFIED, closing session]:</strong> the Volume 2 QoE (<code>1.3.6</code>) reproduces CIP p106 <strong>to the decimal</strong> — so 164.1 vs 166.2 is a <em>vintage</em> difference, not a source contradiction. But the $4.40MM FY24 growth between vintages decomposes as: fees-and-penalties <strong>12.77 → 14.97 (+2.20)</strong> and a <strong>new $2.49MM &quot;audit adjustment&quot;</strong> with no support tab in Volume 2 because it did not then exist. An unattributed, thrice-recurring &quot;one-time&quot; item that grew 17% between drafts is an earnings-quality finding in its own right. → asks <strong>#43 / #45</strong>.</p>
+<h3>4.2 Step two: $128 → $103 — three costs outside the seller's standalone layer</h3>
+<p>These are not second haircuts; they are named run-rate costs the standalone build omits:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>Correction</th>
+  <th style="text-align:right">Low</th>
+  <th style="text-align:right"><strong>Base</strong></th>
+  <th style="text-align:right">High</th>
+  <th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>H7 — benefits/labor step-up</strong></td>
+  <td style="text-align:right">(18)</td>
+  <td style="text-align:right"><strong>(12)</strong></td>
+  <td style="text-align:right">(6)</td>
+  <td>Factory limb <strong>evidenced</strong>: FY25 employer benefits <strong>$38.18MM = 33.9% load</strong> on $112.52MM factory labor (site range 29.5–40.2%). Salaried limb (~805 heads, <strong>$86.13MM payroll</strong>) has <strong>no baseline anywhere in the room</strong> — scaled, and <strong>#29 is blocking</strong> for exactly this reason. Midpoint ≈ <strong>9% of base EBITDA</strong></td>
+</tr>
+<tr>
+  <td><strong>Insurance</strong></td>
+  <td style="text-align:right">(10)</td>
+  <td style="text-align:right"><strong>(5)</strong></td>
+  <td style="text-align:right">0</td>
+  <td>Seller's own directional file: standalone program <strong>$7.36MM</strong> at Nestlé-style retentions vs <strong>$10.22MM</strong> at benchmark newco retentions. Whether <em>any</em> insurance line is in the standalone baseline is <strong>untestable</strong> — the detail is on absent KPMG Vol 1 pp46–57 → <strong>#64</strong></td>
+</tr>
+<tr>
+  <td><strong>Globe / IT infrastructure replacement</strong></td>
+  <td style="text-align:right">(15)</td>
+  <td style="text-align:right"><strong>(8)</strong></td>
+  <td style="text-align:right">(3)</td>
+  <td><strong>~$15MM p.a. of Nestlé's Globe ERP infrastructure charge is classified as D&amp;A <em>below</em> EBITDA</strong> — so the &quot;fully-burdened&quot; standalone EBITDA excludes the running cost of the core IT the buyer must replace (which then also generates the $34MM capex) [<code>1.3.18</code>, VERIFIED]</td>
+</tr>
+<tr>
+  <td><strong>Total</strong></td>
+  <td style="text-align:right"><strong>(43)</strong></td>
+  <td style="text-align:right"><strong>(25)</strong></td>
+  <td style="text-align:right"><strong>(9)</strong></td>
+  <td></td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="bq bq-warn">
+<p><strong>⚠ CALLOUT — a further downside skew, held out of the base:</strong> the seller's cash-rent adjustment is <strong>frozen at $(8.27)MM in all three years</strong> across six retained leases, while the ROU depreciation added back ran <strong>8.29 → 17.57 → 13.88</strong>. Net lease benefit retained in adjusted EBITDA: <strong>+$0.02 / +$9.30 / +$5.61MM.</strong> The seller's own tab annualizes the adjustment at <strong>$(14.44)MM</strong> against the $(8.27) applied. Either FY25 EBITDA is overstated by ~$5.6MM, or the D&amp;A add-back carries leases the buyer never receives — <strong>both readings adverse, in different places.</strong> New ask <strong>#83</strong>; range on the base $(6)–$0MM.</p>
+</blockquote>
+<hr />
+<h2 id="s-5-free-cash-flow-the-bridge-the-cip-does-not-show">5 · FREE CASH FLOW — THE BRIDGE THE CIP DOES NOT SHOW</h2>
+<p><strong>Year 1 post-close, TSA running, before the rLTMA cliff ($MM):</strong></p>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>Step</th>
+  <th style="text-align:right">Low</th>
+  <th style="text-align:right"><strong>Base</strong></th>
+  <th style="text-align:right">High</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Independent standalone adj. EBITDA</td>
+  <td style="text-align:right">115</td>
+  <td style="text-align:right"><strong>128</strong></td>
+  <td style="text-align:right">145</td>
+</tr>
+<tr>
+  <td>H7 / insurance / Globe corrections</td>
+  <td style="text-align:right">(43)</td>
+  <td style="text-align:right"><strong>(25)</strong></td>
+  <td style="text-align:right">(9)</td>
+</tr>
+<tr>
+  <td><strong>Corrected standalone EBITDA</strong></td>
+  <td style="text-align:right"><strong>72</strong></td>
+  <td style="text-align:right"><strong>103</strong></td>
+  <td style="text-align:right"><strong>136</strong></td>
+</tr>
+<tr>
+  <td>Maintenance capex — <span class="tag tag-ares">ARES VIEW</span> $20–25MM vs seller trough $13–15MM vs <strong>$34.5MM factory depreciation</strong></td>
+  <td style="text-align:right">(25)</td>
+  <td style="text-align:right"><strong>(22)</strong></td>
+  <td style="text-align:right">(20)</td>
+</tr>
+<tr>
+  <td>Catch-up / transition capex (yrs 1–2, annualised; no deferred-capex register exists → #23)</td>
+  <td style="text-align:right">(20)</td>
+  <td style="text-align:right"><strong>(12)</strong></td>
+  <td style="text-align:right">(8)</td>
+</tr>
+<tr>
+  <td>Working capital — a <strong>use</strong>, not the further $10MM source the CIP underwrites; the $126MM destock is spent</td>
+  <td style="text-align:right">(15)</td>
+  <td style="text-align:right"><strong>(8)</strong></td>
+  <td style="text-align:right">0</td>
+</tr>
+<tr>
+  <td><strong>Pre-financing cash flow</strong></td>
+  <td style="text-align:right"><strong>12</strong></td>
+  <td style="text-align:right"><strong>61</strong></td>
+  <td style="text-align:right"><strong>108</strong></td>
+</tr>
+<tr>
+  <td>Cash interest at the working frame (1L $700–775MM) [EXTRA-ROOM basis]</td>
+  <td style="text-align:right">(74)</td>
+  <td style="text-align:right"><strong>(65)</strong></td>
+  <td style="text-align:right">(58)</td>
+</tr>
+<tr>
+  <td>Cash taxes — historic tax was a <strong>credit</strong> ($10.7/$13.5MM) on DTL run-off; the buyer is a cash taxpayer</td>
+  <td style="text-align:right">(10)</td>
+  <td style="text-align:right"><strong>(6)</strong></td>
+  <td style="text-align:right">(3)</td>
+</tr>
+<tr>
+  <td>One-time separation, annualised over 3 yrs — <strong>$60–100MM</strong> <span class="tag tag-ares">ARES VIEW</span> vs seller <strong>$44MM</strong>; <em>excludes</em> the uncosted DC surgery (#66) and Prescott severance</td>
+  <td style="text-align:right">(33)</td>
+  <td style="text-align:right"><strong>(26)</strong></td>
+  <td style="text-align:right">(20)</td>
+</tr>
+<tr>
+  <td><strong>FREE CASH FLOW, years 1–3</strong></td>
+  <td style="text-align:right"><strong>(105)</strong></td>
+  <td style="text-align:right"><strong>(36)</strong></td>
+  <td style="text-align:right"><strong>27</strong></td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="bq bq-governs">
+<p><strong>⚠ SUPERSEDED AT REVISION 2 — see <code>ADDENDUM_B_SPONSOR_MATERIALS.md</code> §4.9 for the re-footed bridge.</strong> Three inputs above have changed: the base falls to <strong>~$75MM</strong> post-Costco, one-time separation rises to <strong>$90–120MM</strong>, and a <strong>$(28.0)MM</strong> ERP safety-stock build is added. Re-footed, years 1–3 free cash flow is <strong>$(154) / $(82) / $(14)</strong> — negative in every case. The table above is retained for audit trail only.</p>
+</blockquote>
+<blockquote class="bq bq-note">
+<p><strong>The single most important line in this package:</strong> at the working frame, <strong>cash interest of ~$65MM consumes 63% of corrected EBITDA before a dollar of capex</strong> — <strong>87% at Revision 2's revised base.</strong> The seller's metric says 127.5% conversion, on a definition (Mgmt Presentation p 87 fn 8) that excludes interest, tax, separation and the rLTMA cliff, and that counts a deliberate 2025 working-capital liquidation as cash generation. The lender's arithmetic says <strong>negative $82MM.</strong></p>
+</blockquote>
+<p><strong>Steady state ($MM):</strong></p>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th></th>
+  <th style="text-align:right">Yr 4 (pre-cliff)</th>
+  <th style="text-align:right">Yr 5+ (post-rLTMA cliff)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Corrected EBITDA</td>
+  <td style="text-align:right">103</td>
+  <td style="text-align:right">83</td>
+</tr>
+<tr>
+  <td>rLTMA absorption cliff — <strong>contractual and dated, not a scenario</strong> (2+1 / 3+1+1 yrs, at cost, on Nestlé's Almere ramp-down)</td>
+  <td style="text-align:right">—</td>
+  <td style="text-align:right">(20)</td>
+</tr>
+<tr>
+  <td>Capex / WC / taxes</td>
+  <td style="text-align:right">(33)</td>
+  <td style="text-align:right">(29)</td>
+</tr>
+<tr>
+  <td>Cash interest at frame</td>
+  <td style="text-align:right">(65)</td>
+  <td style="text-align:right">(65)</td>
+</tr>
+<tr>
+  <td><strong>FCF</strong></td>
+  <td style="text-align:right"><strong>5</strong></td>
+  <td style="text-align:right"><strong>(31)</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>The credit does not de-lever at the frame. It amortises negatively once the rLTMA rolls off.</strong></p>
+<p><strong>At the recommended attachment (1L ~$490MM @ ~9.75%):</strong> FCF is <strong>$7MM</strong> (yrs 1–3, separation equity-funded) → <strong>$22MM</strong> (yr 4) → <strong>$10MM</strong> (yr 5+). Debt-funding the separation flips years 1–3 to <strong>$(19)MM</strong> — which is why equity-funded separation is a condition, not a preference.</p>
+<hr />
+<h2 id="s-6-model-grid-three-cases-mm">6 · MODEL GRID — THREE CASES ($MM)</h2>
+<p><em>Case B is the seller's basis, shown to be argued against, not adopted.</em></p>
+<blockquote class="bq bq-governs">
+<p><strong>⚠ SUPERSEDED AT REVISION 2.</strong> The grid below runs on the pre-Costco $103MM base. The governing grid is now <strong><code>PHASE_7_MODEL_GRID_R2.csv</code></strong> and <code>PHASE_7_SYNTHESIS.md</code> §14: base <strong>$42/$75/$110</strong>; Case B split into <strong>B1 (seller plan, $164→$237 by 2030E)</strong> and <strong>B2 (sponsor lender model, ~$134, no capital structure supplied)</strong>; downside re-cut to <strong>$12MM (mild) / $(84)MM (severe)</strong> — the mild downside no longer covers cash interest at any attachment above ~$120MM. Retained below for audit trail.</p>
+</blockquote>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th></th>
+  <th style="text-align:right"><strong>A — Ares base</strong></th>
+  <th style="text-align:right"><strong>B — Seller</strong></th>
+  <th style="text-align:right"><strong>C — Correlated downside</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Reference EBITDA</td>
+  <td style="text-align:right">128</td>
+  <td style="text-align:right">164</td>
+  <td style="text-align:right">128</td>
+</tr>
+<tr>
+  <td>Standalone corrections</td>
+  <td style="text-align:right">(25)</td>
+  <td style="text-align:right">—</td>
+  <td style="text-align:right">(25)</td>
+</tr>
+<tr>
+  <td><strong>Corrected EBITDA</strong></td>
+  <td style="text-align:right"><strong>103</strong></td>
+  <td style="text-align:right"><strong>164</strong></td>
+  <td style="text-align:right"><strong>103</strong></td>
+</tr>
+<tr>
+  <td>Costco adverse reset</td>
+  <td style="text-align:right">—</td>
+  <td style="text-align:right">—</td>
+  <td style="text-align:right">(42) → (83)</td>
+</tr>
+<tr>
+  <td>Amazon / CVS continuation</td>
+  <td style="text-align:right">—</td>
+  <td style="text-align:right">—</td>
+  <td style="text-align:right">(11) → (42)</td>
+</tr>
+<tr>
+  <td>rLTMA cliff (from +24m)</td>
+  <td style="text-align:right">(20)</td>
+  <td style="text-align:right">—</td>
+  <td style="text-align:right">(15) → (25)</td>
+</tr>
+<tr>
+  <td>FFOH de-absorption on lost volume</td>
+  <td style="text-align:right">—</td>
+  <td style="text-align:right">—</td>
+  <td style="text-align:right">(8) → (18)</td>
+</tr>
+<tr>
+  <td><strong>Steady-state EBITDA</strong></td>
+  <td style="text-align:right"><strong>83</strong></td>
+  <td style="text-align:right"><strong>164</strong></td>
+  <td style="text-align:right"><strong>27 → (65)</strong></td>
+</tr>
+<tr>
+  <td>Capex (maint. + catch-up)</td>
+  <td style="text-align:right">(34)</td>
+  <td style="text-align:right">(15)</td>
+  <td style="text-align:right">(42)</td>
+</tr>
+<tr>
+  <td>Working capital</td>
+  <td style="text-align:right">(8)</td>
+  <td style="text-align:right"><strong>+10 source</strong></td>
+  <td style="text-align:right">(15)</td>
+</tr>
+<tr>
+  <td>Cash interest @ frame</td>
+  <td style="text-align:right">(65)</td>
+  <td style="text-align:right">(65)</td>
+  <td style="text-align:right">(65)</td>
+</tr>
+<tr>
+  <td>Cash taxes</td>
+  <td style="text-align:right">(6)</td>
+  <td style="text-align:right">(10)</td>
+  <td style="text-align:right">—</td>
+</tr>
+<tr>
+  <td>One-time separation (annualised)</td>
+  <td style="text-align:right">(26)</td>
+  <td style="text-align:right">(15)</td>
+  <td style="text-align:right">(33)</td>
+</tr>
+<tr>
+  <td><strong>FCF, years 1–3</strong></td>
+  <td style="text-align:right"><strong>(56)</strong></td>
+  <td style="text-align:right"><strong>69</strong></td>
+  <td style="text-align:right"><strong>(128) → (220)</strong></td>
+</tr>
+<tr>
+  <td><strong>Leverage on corrected EBITDA (1L $737.5MM)</strong></td>
+  <td style="text-align:right"><strong>7.2x</strong></td>
+  <td style="text-align:right">4.5x</td>
+  <td style="text-align:right"><strong>27x → n.m.</strong></td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="s-7-the-downside-is-a-calendar-not-a-sensitivity">7 · THE DOWNSIDE IS A CALENDAR, NOT A SENSITIVITY</h2>
+<p>Category erosion (H1), retailer concentration (H2) and separation cost (H3) are <strong>correlated</strong>. Stressed together and dated from close (T0 = H1-2027 working assumption):</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>T</th>
+  <th>Event</th>
+  <th>EBITDA impact</th>
+  <th>Cash impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>T0</strong></td>
+  <td>Close. Hazleton DC already transferred out. rLTMA starts at cost, zero markup. <strong>Nestlé's indemnity extinguishes and cannot be pledged</strong> (IATA §5.4/§5.5). <strong>Canadian benefits break absent Desjardins consent</strong> — self-funded, expressly non-assignable. <strong>Treasury, tax, controllership and risk functions all resign</strong> — every officer of all three target entities is a Nestlé employee</td>
+  <td>—</td>
+  <td>Transfer taxes on both IATA legs, borne inside the target (§2.11), <strong>unquantified</strong></td>
+</tr>
+<tr>
+  <td><strong>T0 → +6m</strong></td>
+  <td>Standalone cost lands in full (H7 + insurance + Globe). <strong>46 salaried roles eliminated at &quot;Day 2&quot; land on the buyer, not the seller</strong></td>
+  <td><strong>(13) → (28)</strong> run-rate</td>
+  <td>Buyer must fund its own retention — the seller's is <strong>$2.3MM across 22 people (0.8% of the workforce)</strong> and <em>excludes the seconded leadership executing the separation</em></td>
+</tr>
+<tr>
+  <td><strong>+6 → +18m</strong></td>
+  <td>ERP/WMS/payroll cutover across seven cGMP plants. OTIF/chargeback exposure lands on the same retailers already levying the $15MM &quot;fees and penalties.&quot; <strong>Distribution-centre surgery (Hazleton→Holbrook, Sparks→Geodis Reno) is uncosted by the seller's own tracker</strong></td>
+  <td>H2 event risk</td>
+  <td>One-time $60–100MM; DC surgery <strong>on top</strong></td>
+</tr>
+<tr>
+  <td><strong>+12 → +24m</strong></td>
+  <td><strong>Costco item rotation / Kirkland re-bid.</strong> 43 active items; a single item is a <strong>$3.6–33.0MM margin event</strong>; adverse reset <strong>$(42)–(83)MM.</strong> Lands physically at San Antonio — the PL gummy engine, <strong>no contingency site</strong></td>
+  <td><strong>(7) → (83)</strong></td>
+  <td>FFOH de-absorption on top: Navigate brands absorb <strong>71.4% of $172.4MM</strong> of P&amp;L conversion cost</td>
+</tr>
+<tr>
+  <td><strong>+12 → +24m</strong></td>
+  <td>Amazon unwind persists (Jan–May-26 <strong>−13.7%</strong>); CVS run-rate already ≈ $(10)–(14)MM; <strong>marketing-cut risk</strong> — OBF 18.1% / Nuun 28.7% / GARD 21.3% of sales in PFME</td>
+  <td><strong>(11) → (42)</strong></td>
+  <td>—</td>
+</tr>
+<tr>
+  <td><strong>+18 → +30m</strong></td>
+  <td><strong>Long Island labor limb.</strong> Live NLRB organizing at Bayport — five of six charges; latest alleged conduct <strong>23 Apr 2026</strong>. Certification transfers to the buyer by <em>Burns</em> successorship. <strong>68.3% of heads, ~61% of payroll and ~42% of asset NBV are the same geography</strong></td>
+  <td>Wage/benefit re-rate compounding H7</td>
+  <td>Consolidation attempt = <strong>$16.5–33.0MM NY-cluster severance + a 90-day NYS WARN paid runway, both ahead of any saving</strong></td>
+</tr>
+<tr>
+  <td><strong>+24 → +36m</strong></td>
+  <td><strong>rLTMA SoWs 1–3 expire — packaging absorption cliff</strong>, epicentre Grundy (55% non-Navigate volume). ERP's own &quot;2–3 year&quot; duration <strong>overruns a 24-month TSA by 6–12 months</strong>; extension rights unknowable — <strong>no TSA form exists at any ID</strong></td>
+  <td><strong>(15) → (25)</strong></td>
+  <td>TSA extension cost, unpriced</td>
+</tr>
+<tr>
+  <td><strong>+36m+</strong></td>
+  <td>SoW 4 bulk expiry. Prescott exit: <strong>$15.9MM unimpaired NBV write-off + $0.5–1.0MM severance</strong> vs a seller programme priced at $3.5MM total with <strong>no headcount limb</strong></td>
+  <td>—</td>
+  <td>Above plan</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Correlated downside EBITDA: $27MM (mild) → $(65)MM (severe)</strong> against the $103MM corrected base — consistent with the account-level build showing <strong>$63–125MM of margin at risk = 49–97% of the independent base, before fixed-cost stranding.</strong></p>
+<blockquote class="bq bq-governs">
+<p><strong>⚠ RE-CUT AT REVISION 2</strong> (<code>PHASE_7_SYNTHESIS.md</code> §14.2): on the post-Costco base of $75MM, with the realised 4-SKU loss stripped from the Costco leg ($(14)/$(55) remaining) and the rLTMA leg revised to $(30)/$(44), downside EBITDA is now <strong>$12MM (mild) → $(84)MM (severe)</strong>. <strong>The mild downside no longer covers cash interest at any attachment above ~$120MM</strong> — the mild case is a collateral workout, not a covenant conversation. The base moved toward the downside; the downside did not move away.</p>
+</blockquote>
+<p><strong>First covenant to break, and when:</strong> not the reset — <strong>the standalone cost step-up at T0+6m</strong>, if covenant EBITDA is struck on the seller's normalized number without hard-capped add-backs. The reset is the second break, at T0+12–24m. Both land inside the TSA window, while the borrower has <strong>no treasury or controllership function of its own</strong> and no one yet in seat to sign a compliance certificate.</p>
+<hr />
+<h2 id="s-8-recovery">8 · RECOVERY</h2>
+<h3>8.1 Asset build ($MM) — <span class="tag tag-ares">ARES VIEW</span> on the verified Dec-25 asset base</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>Class</th>
+  <th style="text-align:right">NBV</th>
+  <th>Haircut</th>
+  <th style="text-align:right">Recovery</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Land</td>
+  <td style="text-align:right">52.1</td>
+  <td>70–90% realizable</td>
+  <td style="text-align:right">36–47</td>
+</tr>
+<tr>
+  <td>Buildings (NY cluster ~42% of NBV)</td>
+  <td style="text-align:right">76.6</td>
+  <td>50–75%</td>
+  <td style="text-align:right">38–57</td>
+</tr>
+<tr>
+  <td>Machinery &amp; equipment — special-purpose cGMP lines; pre-2021 cohort <strong>78% depreciated and still running</strong></td>
+  <td style="text-align:right">81.1</td>
+  <td>20–40%</td>
+  <td style="text-align:right">16–32</td>
+</tr>
+<tr>
+  <td>Tools / furniture / AUC / IT / vehicles</td>
+  <td style="text-align:right">60.8</td>
+  <td>various</td>
+  <td style="text-align:right">3–11</td>
+</tr>
+<tr>
+  <td>ROU (leasehold)</td>
+  <td style="text-align:right">19.6</td>
+  <td>0%</td>
+  <td style="text-align:right">0</td>
+</tr>
+<tr>
+  <td><strong>PP&amp;E</strong></td>
+  <td style="text-align:right"><strong>290.2</strong></td>
+  <td></td>
+  <td style="text-align:right"><strong>93–147</strong></td>
+</tr>
+<tr>
+  <td>Inventory (audited, net of $26.2MM NRV; dated goods at 153–189 DIO)</td>
+  <td style="text-align:right">326.3</td>
+  <td>30–50%</td>
+  <td style="text-align:right">98–163</td>
+</tr>
+<tr>
+  <td>Receivables (ECL trend adverse; live trade-spend disputes)</td>
+  <td style="text-align:right">166.4</td>
+  <td>70–85%</td>
+  <td style="text-align:right">116–141</td>
+</tr>
+<tr>
+  <td><strong>Brand / IP</strong></td>
+  <td style="text-align:right">n/a</td>
+  <td>see §3 Q3</td>
+  <td style="text-align:right"><strong>50–250</strong></td>
+</tr>
+<tr>
+  <td><strong>Gross recoverable</strong></td>
+  <td style="text-align:right"></td>
+  <td></td>
+  <td style="text-align:right"><strong>357–701</strong></td>
+</tr>
+<tr>
+  <td>Severance cash — <strong>in the waterfall ahead of any consolidation benefit</strong>, not a footnote</td>
+  <td style="text-align:right"></td>
+  <td></td>
+  <td style="text-align:right"><strong>(27)–(54)</strong></td>
+</tr>
+<tr>
+  <td><strong>Net, before priority &amp; administrative claims</strong></td>
+  <td style="text-align:right"></td>
+  <td></td>
+  <td style="text-align:right"><strong>303–647</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>Against: <strong>$156.3MM payables + $91.3MM accruals retained inside the target</strong> (IATA §2.9 — including Non-Navigate payables), <strong>all of the target's historic tax liabilities</strong> (§2.9(f)), and <strong>several liability for the entire Nestlé consolidated group's federal tax</strong> for every membership year (Treas. Reg. §1.1502-6).</p>
+<h3>8.2 Outcome</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>Attachment</th>
+  <th>Range</th>
+  <th>Base</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Working frame, 1L $700–775MM</td>
+  <td><strong>39–86%</strong></td>
+  <td><strong>~55–65%</strong></td>
+</tr>
+<tr>
+  <td><strong>Recommended, 1L $410–575MM</strong></td>
+  <td><strong>60–100%</strong></td>
+  <td><strong>~90–100%</strong></td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="bq bq-governs">
+<p><strong>⚠ REVISED AT REVISION 2</strong> (<code>PHASE_7_SYNTHESIS.md</code> §14.5): brand/IP top trimmed <strong>$250MM → $150MM</strong> — Nielsen shows OBF −11.7% L52 losing share in a <em>declining</em> category and Nuun −5.6% in a category growing +24.0%; neither carries a stable-brand mark. Net recoverable <strong>$303–574MM</strong>. Frame recovery <strong>39–82%, base ~50–60%</strong>. At the Rev 2 attachment of <strong>$185–225MM: ~100% recovery, 1.3–2.9x asset cover</strong> — and #73/#33 stop being recovery-tail questions and become the collateral-integrity test for the whole loan.</p>
+</blockquote>
+<blockquote class="bq bq-warn">
+<p><strong>⚠ The governing gap — #73.</strong> Across <strong>22,145 asset rows</strong>, the Dec-25 PP&amp;E listing shows <strong>no impairment against any named asset</strong>, and ties to the balance sheet only through an unexplained <strong>−$13.8MM &quot;EY Adj for PPA error in 2021&quot;</strong> topside. Neither the $122MM CIP-bridge impairment nor the $89.0MM FY25 audited impairment is traceable to anything. If it sits in intangibles/goodwill (the likely reading — intangible amortization is 85–86% of <em>total</em> audited D&amp;A), then PP&amp;E book <strong>still embeds 2021 purchase-price step-up</strong> and the seller's own auditors have been writing the brands down. <strong>Worth 8–12 points of first-lien recovery — roughly $60–90MM.</strong> No third-party appraisals exist (#33); no IP schedules exist.</p>
+</blockquote>
+<hr />
+<hr />
+<h1 id="s-part-iii-structure-amp-conditions" class="part">PART III — STRUCTURE &amp; CONDITIONS</h1>
+<hr />
+<h2 id="s-9-structure-recommendation">9 · STRUCTURE RECOMMENDATION</h2>
+<blockquote class="bq bq-governs">
+<p><strong>⚠ SUPERSEDED AT REVISION 2</strong> — the governing structure is <code>PHASE_7_SYNTHESIS.md</code> §14.4. Headline changes: <strong>quantum $185–225MM</strong> (2.5–3.0x post-Costco; top $40MM conditional on cliff timing; $250MM+ fails the post-cliff test); <strong>equity funds the full one-time stack, $133–178MM</strong> (separation $90–120 + catch-up capex $15–30 + <strong>ERP inventory build ~$28, new</strong>); <strong>sweep 100% ECF from close</strong> with a hard amortisation covenant to <strong>≤$185MM by the earlier of close+30m and first SoW expiry</strong>; <strong>new: asset-coverage test ≥~1.3x net OLV with springing appraisal rights</strong> (the mild downside is a collateral case). All other terms below — instrument, pricing posture, liquidity floor, capex floor, customer-event trigger, milestones, EBITDA definition — <strong>stand unchanged</strong> and apply to the revised quantum. The table is retained for audit trail.</p>
+</blockquote>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>Term</th>
+  <th>Recommendation</th>
+  <th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Instrument</strong></td>
+  <td><strong>First lien only. No second lien behind it</strong></td>
+  <td>§8 — recovery does not support layering</td>
+</tr>
+<tr>
+  <td><strong>Quantum</strong></td>
+  <td><strong>$410–575MM</strong> = 4.0–4.5x corrected EBITDA (~$103MM); 3.2–4.5x the independent $128MM</td>
+  <td>Market average unitranche ~5.7x <span class="tag tag-external">EXTERNAL</span>; a declining, concentrated credit with a dated cliff should sit <strong>inside</strong> the average, not above it. The working frame is 6.8–7.5x corrected — above market on every axis</td>
+</tr>
+<tr>
+  <td><strong>Equity</strong></td>
+  <td>Minimum 50% of capitalization. <strong>Separation cost ($60–100MM) and catch-up capex ($15–30MM) funded by equity, not the facility</strong></td>
+  <td>The single assumption that moves years 1–3 FCF from negative to positive</td>
+</tr>
+<tr>
+  <td><strong>Pricing</strong></td>
+  <td><strong>S+575–650 + 2.0–3.0 pts OID</strong></td>
+  <td>Vs market median S+475 / modal band S+450–499, with H1-2026 stress adding 25–100bps <span class="tag tag-external">EXTERNAL</span>. If the deal will not clear here, that is information</td>
+</tr>
+<tr>
+  <td><strong>Leverage covenant</strong></td>
+  <td>Net leverage, quarterly from Q1, <strong>25–30% cushion on the <em>corrected</em> base</strong>, annual step-downs. <strong>Never on seller EBITDA</strong></td>
+  <td>The first break is the standalone cost step-up — the covenant must see it</td>
+</tr>
+<tr>
+  <td><strong>Liquidity covenant</strong></td>
+  <td><strong>Minimum $75–100MM. Non-negotiable</strong></td>
+  <td>FCF is negative through separation even in the base case</td>
+</tr>
+<tr>
+  <td><strong>Capex covenant</strong></td>
+  <td><strong>A floor, not a cap — minimum $20MM p.a. maintenance</strong></td>
+  <td>Capex is senior to interest in practice; a stressed borrower under-spends the plants, and the plants are the recovery</td>
+</tr>
+<tr>
+  <td><strong>Customer-event trigger</strong></td>
+  <td>Mandatory prepayment / equity cure on: loss of any Kirkland item &gt;$10MM NNS; any top-5 reset cutting assortment &gt;15%; Costco NNS −20% YoY two consecutive quarters</td>
+  <td>The evidence specifically demands it: a single Costco item is a $3.6–33.0MM margin event a leverage test only catches after the quarter closes</td>
+</tr>
+<tr>
+  <td><strong>Separation milestones</strong></td>
+  <td>ERP go-live and TSA exit <strong>dated</strong>, covenant tightening on slippage past +30 months</td>
+  <td>The CIP's own 2–3-year ERP overruns its own 18–24-month TSA</td>
+</tr>
+<tr>
+  <td><strong>Cash sweep</strong></td>
+  <td><strong>75% ECF, no step-down until net leverage &lt;3.5x.</strong> 100% of asset-sale/insurance proceeds; <strong>no reinvestment right</strong> for Prescott or Bayport 35</td>
+  <td>The sweep exists to capture the post-separation recovery, not to produce cash in yrs 1–3 (it won't)</td>
+</tr>
+<tr>
+  <td><strong>EBITDA definition</strong></td>
+  <td>Add-backs capped at <strong>10%</strong>; run-rate synergies ≤12 months forward, no &quot;reasonably identifiable&quot; language. <strong>Exclude by name, on the diligence record:</strong> waste normalization · &quot;non-recurring fees and penalties&quot; · phantom/LTIP replacement · any unearned savings (the $9.3MM must not re-enter through the credit agreement)</td>
+  <td>This is where the credit is won or lost</td>
+</tr>
+<tr>
+  <td><strong>Structural protections</strong></td>
+  <td><strong>Unrestricted-subsidiary designation prohibited outright. IP transfer prohibited absolutely</strong> (no J.Crew/Chewy/Serta capacity). Anti-layering; no pari/senior incurrence; no incremental until &lt;4.0x; <strong>no MFN sunset</strong>; full RP/investment lockdown through separation</td>
+  <td>The brands are the recovery, and no IP schedules exist to police anything looser</td>
+</tr>
+<tr>
+  <td><strong>Reporting</strong></td>
+  <td><strong>Monthly for the first 24 months</strong></td>
+  <td>The borrower starts life with no controllership function</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="s-10-conditions-tiered-each-tied-to-a-register-number">10 · CONDITIONS — TIERED, EACH TIED TO A REGISTER NUMBER</h2>
+<h3>▮ Tier 1 — ABSOLUTE. No IC approval without all four.</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>#</th>
+  <th>Condition</th>
+  <th>Why absolute</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>#14</strong></td>
+  <td><strong>The SAPA family, delivered and reviewed</strong></td>
+  <td>It defines perimeter, consideration, indemnity and closing conditions; it is the <strong>only</strong> document that can govern buyer severance (the Nestlé plan <strong>excludes transaction-impacted employees and sunsets 31 Dec 2026</strong> — before close — leaving <strong>$27–54MM entirely unbenchmarked</strong>); and it is the only place the <strong>Nuun equity transfer</strong> can be fixed. <strong>The SAPA is not in the data room</strong> — the file posted under its name is a five-page Nuun UPC transfer agreement</td>
+</tr>
+<tr>
+  <td><strong>#73</strong></td>
+  <td><strong>Impairment push-down + the EY PPA topside</strong></td>
+  <td>8–12 points of recovery (~$60–90MM)</td>
+</tr>
+<tr>
+  <td><strong>#69</strong></td>
+  <td><strong>Customer-level consumption for Costco, Amazon, CVS, Walgreens, Kroger</strong></td>
+  <td><strong>[DOWNGRADED TO HIGH AT REV 2]</strong> Nielsen xAOC+Conv, Stackline (Amazon) and NielsenIQ panel by retailer are now in hand through 6/13/26. The seller's own April-2026 update discloses <em>&quot;inventory normalization at Amazon, CVS, and Costco&quot;</em> and Canada <em>&quot;lapped prior pipe-fills&quot;</em> — the channel-load unwind, in the seller's words. <strong>Residual ask narrows to Costco POS (panel-only) and retailer inventory positions</strong></td>
+</tr>
+<tr>
+  <td><strong>#29</strong></td>
+  <td><strong>Salaried benefits baseline</strong></td>
+  <td>~805 heads and $86.13MM of payroll with <strong>no baseline anywhere in the room</strong>; the H7 salaried limb is currently a scaling assumption</td>
+</tr>
+</tbody>
+</table></div>
+<h3>▮ Tier 2 — Required before any term sheet</h3>
+<p><strong>#6/#58/#60/#10</strong> (KPMG Vols 1 &amp; 3; the TSA form and schedules — the standalone cost stack is otherwise unauditable) · <strong>#70</strong> (Costco programme + all Kirkland PL agreements — 36.8% of sales, zero documentation) · <strong>#62/#25</strong> (co-man source workbook + master list — the model and the contract set describe <em>different supply bases</em>) · <strong>#64</strong> (insurance baseline + collateral/LC requirements) · <strong>A6</strong> (reset any $164MM-anchored indication) · <strong>A8</strong> (source or drop the Costco-PL-loss intelligence).</p>
+<h3>▮ Tier 3 — Conditions precedent to funding</h3>
+<p><strong>#40</strong> — Renaissance master lease novated out or released, <strong>Equipment Schedules delivered</strong> (title-retained equipment cannot be collateral; the participating lessee is the target itself) · <strong>Nuun equity transfer evidenced</strong> ($57MM of sales and a #1 brand position currently sit under NIMCO US, Inc. — outside the entity being sold — with no transfer document anywhere) · <strong>#78</strong> Desjardins written consent or an evidenced replacement (Canadian claims risk transfers Day 1) · <strong>#66</strong> Geodis sub-contracting confirmed (the buyer's US 3PL sits in a RemainCo contract) · <strong>IP schedules delivered</strong> · <strong>Named CFO, Controller and Treasurer in place at close</strong> (every officer resigns at closing; without this no one can sign a compliance certificate) · <strong>22b</strong> <code>1.1.4.4</code> (the <em>operative</em> Second A&amp;R IATA) reposted openable and reviewed.</p>
+<h3>What would change this view</h3>
+<p><strong>Toward proceeding at a higher attachment:</strong> #69 showing consumption tracking shipments at Costco and Amazon · #73 confirming impairment was pushed to PP&amp;E (+8–12 recovery pts) · #70 evidencing multi-year Kirkland contracts with volume commitments · a TSA whose term genuinely covers the ERP build with priced extensions.</p>
+<p><strong>Toward declining outright:</strong> any evidence of an actual Costco private-label loss (A8) — it moves the downside from its mild leg to its severe leg · #77 revealing no SAPA severance covenant · close slipping past H1-2027 against a calendar-anchored &quot;TSA 2026–2028&quot; · NLRB certification at Bayport before signing.</p>
+<hr />
+<hr />
+<h1 id="s-part-iv-the-ask" class="part">PART IV — THE ASK</h1>
+<hr />
+<h2 id="s-11-the-single-consolidated-seller-ask">11 · THE SINGLE CONSOLIDATED SELLER ASK</h2>
+<blockquote class="bq bq-note">
+<p><strong>Process discipline:</strong> requests cannot be issued in parallel or in tranches — <strong>one consolidated ask, made once.</strong> The register below is closed at <strong>#1–#83</strong> (void: #42, #59, #63, #68). <strong>38 items are blocking.</strong> Six earlier items were retired by working the room rather than asking (Solgar treatment, PP quantification, factoring, audit basis, the I&amp;R duplicate, FY25 D&amp;A composition) — the discipline that keeps this ask credible.</p>
+</blockquote>
+<h3>11.1 Cover-letter framing — three points that should lead the letter</h3>
+<ol>
+<li><strong>Four sections are indexed but not populated.</strong> 1.6 and 1.12 do not exist at any depth, plus nine gaps within populated sections. <strong>No document in the room addresses tax, environmental or quality/FDA.</strong></li>
+<li><strong>The documents carrying the seller's analytical conclusions are PDFs.</strong> Volume 2, Volume 3, the COFS-to-Standalone Bridge and the financial statements are all non-native. A lender cannot take a conclusion on trust where the working is withheld. <strong>#5, #11 and #23 are the single most efficient way to unblock the process</strong> and should lead the ask.</li>
+<li><strong>The separation documentary spine is mislabelled.</strong> <code>1.1.3.1</code> is an IATA duplicate posted as the Vol 3 report; <code>1.1.2.1.1</code> is the rLTMA overview posted as &quot;TSA Methodology&quot;; <code>1.1.2.1.3</code> is the CIP posted as the TSA form; <code>1.1.2.1.2</code> was never posted; the SAPA is absent. <strong>No transaction-services documentation exists in the room.</strong> Frame the reposts (#58, #60, 22b) as VDR-integrity items, not ordinary requests.</li>
+</ol>
+<p>Where a native exists and a PDF was posted, the native is preferred in every case. A clean-team arrangement is acceptable where confidentiality requires it (relevant to #9 and #21).</p>
+<h3>11.2 BLOCKING — the room cannot be worked without these (38 items)</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>#</th>
+  <th>Request</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>14</strong></td>
+  <td><strong>SAPA disclosure schedules and exhibits</strong> (1.1.2.3.1, .5, .7) — the SAPA itself is absent; the file posted under its name is a Nuun UPC transfer agreement. Governs perimeter, consideration, indemnity, closing conditions, buyer severance covenant, and the Nuun transfer mechanics</td>
+</tr>
+<tr>
+  <td><strong>73</strong></td>
+  <td><strong>PP&amp;E impairment push-down</strong> — identify the assets/sites/classes absorbing the $122MM CIP-bridge impairment and the $89.0MM FY25 audited impairment, and reconcile both to the Dec-25 listing (22,145 rows, zero impairment shown; ties to B/S only via the <strong>−$13.8MM &quot;EY Adj for PPA error in 2021&quot;</strong> topside — explain that topside). If the impairments sit in intangibles/goodwill, state so and provide the allocation</td>
+</tr>
+<tr>
+  <td><strong>69</strong></td>
+  <td><strong>Customer-level consumption/POS for US Costco, Amazon, CVS, Walgreens and Kroger, FY23–YTD26</strong> (portal or syndicated extracts, item level, monthly/4-week). The room holds Walmart only; ~70% of NNS cannot be tested shipped-vs-consumed</td>
+</tr>
+<tr>
+  <td><strong>29</strong></td>
+  <td><strong>Benefits cost bridge — salaried population.</strong> Factory limb now built independently ($38.18MM / 33.9% load across pension 5.60 · medical 14.41 · social fund 11.70 · match 4.82 · workers comp 1.65 · post-emp admin 0.01). Provide employer cost per head for the <strong>~805 salaried/MOGE heads ($86.13MM payroll)</strong> on the same six elements. Note: the 2026 SBCs posted are <strong>Nestlé-enterprise-wide, not perimeter-specific</strong> (a Kaiser CA SBC appears against a census with no California population) — they evidence design, not cost</td>
+</tr>
+<tr>
+  <td><strong>6</strong></td>
+  <td><strong>KPMG Volume 1 and Volume 4 reports</strong> — Vol 4's databook was posted without its report; <strong>CIP p93 cites Vol 1 pp46–57 as the source of the entire standalone cost build</strong>, which now gates H3</td>
+</tr>
+<tr>
+  <td><strong>10</strong></td>
+  <td><strong>TSA service schedules</strong> — per-service pricing, term, extension rights, exit dates (the content of the never-posted 1.1.2.1.2). Promised for &quot;Round 2&quot;</td>
+</tr>
+<tr>
+  <td><strong>58</strong></td>
+  <td><strong>TSA form agreement (true Exhibit G)</strong> — <code>1.1.2.1.3</code> contains the May-26 CIP, not the TSA; repost with correct content</td>
+</tr>
+<tr>
+  <td><strong>60</strong></td>
+  <td><strong>KPMG Volume 3 — Standalone &amp; Separation Analysis Report</strong> — <code>1.1.3.1</code> contains an IATA duplicate; repost with correct content</td>
+</tr>
+<tr>
+  <td><strong>5</strong></td>
+  <td><strong>Native Excel of the Volume 2 QoE adjustment bridge</strong>, and the final non-draft Volume 2 report</td>
+</tr>
+<tr>
+  <td><strong>11</strong></td>
+  <td><strong>Native Excel behind Volume 3</strong> and behind the COFS-to-Standalone Bridge (<code>1.3.18</code>), bottom-up by function</td>
+</tr>
+<tr>
+  <td><strong>12</strong></td>
+  <td><strong>Costed IT/ERP separation plan</strong> — SAP carve-out approach, timeline, capital cost. Scope is now defined by the room (50 apps to replace; roadmap says &quot;TSA 2026–2028&quot;) but the <em>costed</em> plan is absent</td>
+</tr>
+<tr>
+  <td><strong>1</strong></td>
+  <td>Master VDR index, including titles of sections <strong>1.6 and 1.12</strong> and whether either will be populated</td>
+</tr>
+<tr>
+  <td><strong>2 / 3</strong></td>
+  <td>Files 1.3.33–1.3.36 · Files 1.5.19–1.5.23</td>
+</tr>
+<tr>
+  <td><strong>16</strong></td>
+  <td><strong>Full tax pack</strong> — returns, transfer pricing, attributes, indirect tax, and the tax analysis of the <strong>44 entity reorganisations</strong> at 1.2.3. <em>(Zero tax documents exist in the room, against a live §1.1502-6 structural exposure)</em></td>
+</tr>
+<tr>
+  <td><strong>17</strong></td>
+  <td><strong>Environmental</strong> — Phase I ESAs, permits, remediation liabilities, asbestos/ACM surveys, all owned sites. <em>(Zero environmental documents exist)</em></td>
+</tr>
+<tr>
+  <td><strong>18</strong></td>
+  <td><strong>Quality/FDA</strong> — Form 483s, warning letters, five-year recall history, cGMP audit reports, supplier quality audits. <em>(None exist at any ID.)</em> Add: current compliance status against the <strong>six perpetual consent decrees</strong> (Bountiful 2025 · Disney 2011 · MetRx 1998 · NBTY 2005 · Postal 1991 · Rexall 2003), and content-verify the 2025 Bountiful order against the April 2023 FTC review-hijacking consent order</td>
+</tr>
+<tr>
+  <td><strong>19 / 20</strong></td>
+  <td>Line-review / reset win-loss history by retailer, last three cycles · Volume/price/mix decomposition by brand FY23–FY26 YTD</td>
+</tr>
+<tr>
+  <td><strong>23</strong></td>
+  <td><strong>Capex by site, maintenance vs growth, FY23–26 + 3-yr forward plan + deferred-capex register</strong> <em>(register confirmed absent)</em>. Provide the project list behind the CIP's 20/20/18/15/13/15 line, and the capital cost of the p15 programme (Boca blender / Arizona elimination / gummy relocation / liquids outsourcing / packaging upgrades) priced at $3.5MM in total</td>
+</tr>
+<tr>
+  <td><strong>25</strong></td>
+  <td>Co-manufacturer volume and spend concentration across the 1.8.1.1 relationships (28 unique counterparties, not 30), sole-source flagged</td>
+</tr>
+<tr>
+  <td><strong>27</strong></td>
+  <td><strong>Transferring vs retained employee schedule with stranded cost</strong> — partially answered for salaried only (46 roles eliminated at Day 2, landing on the buyer); absent for all 1,834 hourly. Include treatment of the &quot;(Seconded)&quot; leadership carrying no salary in the base, and the Excluded Worker population outside both severance plans</td>
+</tr>
+<tr>
+  <td><strong>28</strong></td>
+  <td><strong>Pension actuarial valuations and funded status; multiemployer withdrawal liability</strong> — the room holds plan documents but no perimeter numbers; confirm multiemployer status affirmatively</td>
+</tr>
+<tr>
+  <td><strong>30</strong></td>
+  <td><strong>Union status at every site; all RC/RM petitions, elections, ULP dispositions; reserves; successorship assessment</strong> — no CBA exists, but six NLRB charges (five at Bayport) run Sep-25 → May-26 with alleged interrogation, surveillance and 8(a)(3) discipline; Region 29 covers the cluster holding 68.3% of headcount</td>
+</tr>
+<tr>
+  <td><strong>37</strong></td>
+  <td>Solgar / Garden of Life on transferring NY lines — post-close arrangement, cost, duration</td>
+</tr>
+<tr>
+  <td><strong>40</strong></td>
+  <td><strong>Equipment Schedules to the Renaissance master lease; novation status</strong> — title-retained equipment; the Participation Agreement (20 Jun 2025) names <strong>the target itself</strong> as lessee while the folder says &quot;To Be Retained by NHCN&quot;</td>
+</tr>
+<tr>
+  <td><strong>44</strong></td>
+  <td><strong>Reconcile the waste add-back</strong> to the seller's own waste file (2025 restated actual $27.6MM / 2026 LE $24.9MM vs add-backs $16.1/$18.3MM)</td>
+</tr>
+<tr>
+  <td><strong>45</strong></td>
+  <td><strong>Itemise &quot;non-recurring fees and penalties&quot; (+$15.0MM FY24) by counterparty and event</strong> — coded to &quot;Others&quot; in every month while every other adjustment is attributed; recurs FY24/25/26; <strong>and restated upward $12.77→$14.97MM between QoE vintages</strong> — explain the restatement</td>
+</tr>
+<tr>
+  <td><strong>46</strong></td>
+  <td>Inventory obsolescence reserve roll-forward FY23–LTM (charge / utilisation / release / closing)</td>
+</tr>
+<tr>
+  <td><strong>47</strong></td>
+  <td><strong>Reconcile CIP p104 NWC to the audited cash flow statement</strong> — audited releases $67.4MM (FY24) and $58.9MM (FY25); the CIP books $67MM as 2025A and implies ~nil for 2024A. <em>This alone should hold any model built on the CIP</em></td>
+</tr>
+<tr>
+  <td><strong>51</strong></td>
+  <td><strong>Perimeter D&amp;A add-back composition</strong> — FY25 closed; FY24 composition-by-type now closed (24.48 tangible + 42.35 intangible + 17.57 ROU = 84.41, a modelled 1/12th allocation); <strong>still required: the FY24 bridge to audited D&amp;A (~$35.4MM) and confirmation whether the ~$15MM Globe limb sits in FY24</strong></td>
+</tr>
+<tr>
+  <td><strong>8</strong></td>
+  <td>Monthly working capital by component, 36 months, native, plus the proposed <strong>NWC peg and methodology</strong></td>
+</tr>
+<tr>
+  <td><strong>62</strong></td>
+  <td><strong>Co-man model source workbook</strong> behind the Site P&amp;L (the <code>#REF!</code>-severed &quot;Net Standalone Adjustment to RemainCo&quot; line) + the global co-man master list (&quot;what they produce, end markets, spend, split&quot;). Named severed natives: 2025 LOH Oracle Bulk sites DEC · Direct Material cost per Bulk site YTD DEC25 · 2025 S82 UM06/UM07 · FDE Site Level Detail · TBCo Location Cost Segment30 FY23-25 · FFOH Var 2023-2025 · PRO 2023-2025 by LPH · KE30 per SKU · the TCOP-to-COGS files</td>
+</tr>
+<tr>
+  <td><strong>64</strong></td>
+  <td><strong>Insurance in the standalone baseline</strong> — which scenario ($7.36MM Nestlé-retention vs $10.22MM benchmark newco) and which lines are in standalone EBITDA; collateral/LC requirements for retained SIRs</td>
+</tr>
+<tr>
+  <td><strong>76</strong></td>
+  <td><strong>The actual employee roll-forward</strong> — starts and leavers by month/site/function, FY24 to date, with voluntary/involuntary/<strong>RIF</strong> reason codes. The files titled &quot;Roll-forward Census&quot; contain no movement data; the turnover file <strong>expressly excludes RIF</strong> and covers factory only — no reduction-in-force and no salaried attrition is visible anywhere</td>
+</tr>
+<tr>
+  <td><strong>77</strong></td>
+  <td><strong>Severance architecture for the transaction</strong> — which plan governs each population at and after Closing; the SAPA's severance covenant and duration; whether Nestlé will disapply the transaction-exclusion; accrued severance/PTO at Closing. The SSP <strong>excludes transaction-impacted employees, sunsets 31 Dec 2026, and does not cover the 1,834 Supply-Chain hourly</strong> — the largest single labor cash exposure ($27–54MM) is unbenchmarked</td>
+</tr>
+<tr>
+  <td><strong>78</strong></td>
+  <td><strong>Desjardins Canada</strong> — base ASO agreement + all modifications (room holds Modification No. 1 only); Appendix A stop-loss limit + current premium; claims/IBNR and deposit balance; and <strong>Desjardins' written consent position on transfer</strong> given express no-assignment at ASO §13.1 / Stop-Loss §7.1. Self-funded — the buyer takes claims risk Day 1; 120-day renewal / 60-day amendment notice makes this a <strong>pre-signing</strong> workstream. State what happens to Canadian coverage Day 1 absent consent</td>
+</tr>
+</tbody>
+</table></div>
+<h3>11.3 HIGH — needed for a defensible conclusion</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>#</th>
+  <th>Request</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>83</strong></td>
+  <td><strong>Lease economics (new).</strong> The cash-rent adjustment is an identical $(8.27)MM in FY23/24/25 across six leased properties, while ROU depreciation added back ran 8.29 → 17.57 → 13.88 (net retained benefit +0.02 / +9.30 / +5.61); the seller's own tab annualizes the adjustment at (14.44) and its subtotal ≠ its components. Provide the native lease portfolio (<code>1.3.16</code>), confirm whether the two measures share a population (equipment leases? the eight assigned-out properties?), actual perimeter cash rent by year, and the basis of the (14.44)</td>
+</tr>
+<tr>
+  <td><strong>79</strong></td>
+  <td><strong>FTE reconciliation</strong> — census 2,641 vs CIP 2,764 (gap ~123): identify Canada/GCR/China, contractors, leased, open reqs; and explain <strong>three sites reporting 0.0% turnover for six straight months</strong> (implausible at Holbrook scale)</td>
+</tr>
+<tr>
+  <td><strong>80</strong></td>
+  <td><strong>Bayport 35</strong> — a site with 2025 employees, zero 2026 movement, zero census heads, marked &quot;TBC&quot; in the perimeter file two weeks before the drop. Closed, emptied, or re-pointed? Employment and lease position</td>
+</tr>
+<tr>
+  <td><strong>81</strong></td>
+  <td><strong>Change-of-control / assignment terms across the re-papered co-man base</strong> (seven agreements Nov-25 → May-26: Thermo-Pak, Lonza Greenwood, Aphena, RFI, USPL, Softgel — expires 6 Jan 2028 — Aspire) + Nellson's position (lapsed 31 Jan 26) + the three <strong>Deerland trademark licences, one from Société des Produits Nestlé</strong> + whether Nuun's B-Corp certification survives CoC</td>
+</tr>
+<tr>
+  <td><strong>82</strong></td>
+  <td><strong>NYS withholding tax audit</strong> (22 Oct 2025) — periods, scope, status, exposure, retained-vs-transferred</td>
+</tr>
+<tr>
+  <td><strong>4</strong></td>
+  <td>Which procurement-spend version governs: 1.3.2 vs 1.3.28, with as-of dates</td>
+</tr>
+<tr>
+  <td><strong>9</strong></td>
+  <td>Customer key / coded mapping for the redacted channel cube (de-prioritised — the native databases name customers; retain to confirm mapping)</td>
+</tr>
+<tr>
+  <td><strong>13 / 61</strong></td>
+  <td>Reverse-TSA services scope · <strong>rLTMA package</strong>: draft, all four SoWs, costing/true-up annexes, Almere ramp-down schedule; identify the &quot;Boston&quot; bulk source in SoW 2</td>
+</tr>
+<tr>
+  <td><strong>21</strong></td>
+  <td>Customer contracts — Sam's Club, Amazon, Kroger: term, exclusivity, termination, reset rights</td>
+</tr>
+<tr>
+  <td><strong>24</strong></td>
+  <td>Asset condition — line-level commissioning dates and maintenance history (the PPA re-capitalization contaminates the acquisition-date field; the pre-2021 machinery cohort is 78% depreciated and still in service)</td>
+</tr>
+<tr>
+  <td><strong>26</strong></td>
+  <td>Input-cost pass-through history — gelatin and key actives, by retailer</td>
+</tr>
+<tr>
+  <td><strong>31</strong></td>
+  <td><strong>Consolidated litigation register with reserves</strong> — OBF efficacy (Whyble) is live in the Second Circuit; plus Garza (CLRA, served 27 Feb 26), Silberman, Lopez v PP (ADA, 26 May 26), Galarza/Hampton v Nuun, Knight (talc), Pitre, the <strong>enforced ECMOHO ICC award</strong> (court acceptance 28 May 25), and recurring Prop 65 settlements. No reserve is disclosed for any matter</td>
+</tr>
+<tr>
+  <td><strong>32 / 33 / 34</strong></td>
+  <td>Lien/UCC searches, all transferring entities · <strong>Third-party appraisals</strong> — owned real estate and material equipment (prioritise San Antonio / Bayport / Boca / Bohemia) · Liability loss runs and claims triangles, five years</td>
+</tr>
+<tr>
+  <td><strong>35 / 36</strong></td>
+  <td>Auction timetable, current round, bid deadline · Confirmation the 25-July drop is complete + schedule of further drops</td>
+</tr>
+<tr>
+  <td><strong>38</strong></td>
+  <td>Amazon CAC (removed from the unit-economics file; the rest of the page survives)</td>
+</tr>
+<tr>
+  <td><strong>39</strong></td>
+  <td>LTMA expiry and absorption — terms now known (2+1 / 3+1+1, at cost); modelled exposure <strong>$30–34MM p.a. from close+2 [REVISED, Rev 2]</strong> — the sponsor's own model steps fixed factory expense up <strong>$43.84MM</strong> in 2029 against only $10–15MM of assumed mitigation, versus KPMG Volume 2 at $5–10MM. Three views on the record; the buyer underwrites a worse outcome than Ares did</td>
+</tr>
+<tr>
+  <td><strong>41</strong></td>
+  <td>Consolidated UPC / GS1 prefix schedule — registration is scrambled across the group; listings, EDI and Amazon catalogues key off the prefixes</td>
+</tr>
+<tr>
+  <td><strong>43</strong></td>
+  <td>QoE vintage reconciliation — mechanism closed (Vol 2 = CIP; Vol 4 later); <strong>now required: why fees-and-penalties grew $2.2MM between vintages, and full support for the new $2.49MM &quot;audit adjustment&quot;</strong></td>
+</tr>
+<tr>
+  <td><strong>49 / 50 / 52</strong></td>
+  <td>Puritan's: reconcile $10MM (CIP) to $6.09MM (databook); repost the two <code>#REF!</code> rows · Mapping for the $206MM Promotion↔Incentives reclassification · Composition of &quot;Other trading expenses – net&quot; ($38.2→$84.1MM)</td>
+</tr>
+<tr>
+  <td><strong>53 / 54</strong></td>
+  <td><strong>DSO sustainability</strong> — AR aging by top-10 customer at 12/31/24, 12/31/25, 5/31/26; standard terms; any early-pay/extended dating offered Nov–Dec-25 · Reconcile CIP DIO 189 days to the audited 173/153</td>
+</tr>
+<tr>
+  <td><strong>55 / 56 / 57</strong></td>
+  <td>Native org charts (posted PNGs are unreadable) · <strong>Sudbury MA</strong> — a named business-continuity node absent from the CIP network narrative: function, perimeter status, cost location · Packaging-utilization basis/vintage + explain <strong>Prescott at 71% utilization against ~zero volume</strong></td>
+</tr>
+<tr>
+  <td><strong>65 / 66 / 67</strong></td>
+  <td><strong>Leonia</strong> — the <em>sole</em> RemainCo facility supporting Navigate and a named Bohemia contingency: volumes, the ~$22.8MM cost delta, forward terms incl. contingency manufacturing · <strong>Distribution</strong> — Geodis agreement; buyer sub-contracting confirmation; costing of the Hazleton/Sparks exit and Reno consolidation; post-close DC map · <strong>Separation budget beyond IT capex</strong> (PMO, data migration, CSV validation, parallel-run, rebrand, entity setup) + 2026 IT capex actuals</td>
+</tr>
+<tr>
+  <td><strong>70 / 71 / 72</strong></td>
+  <td><strong>Costco</strong> — branded rotation/MVM history + <strong>all Kirkland PL agreements</strong> with bid cycles and volume commitments; identify any Kirkland item lost or under re-bid and whether the 2026 LE reflects it · <strong>Dec-25 PO-level shipment support</strong> + promo calendar + Q1-26 returns for the four loaded accounts · <strong>PL wind-downs</strong> — Dollar General final ship date (LTM still carries $11.4MM residual), commitments, exit costs, other accounts under notice</td>
+</tr>
+<tr>
+  <td><strong>74 / 75</strong></td>
+  <td><strong>Prescott</strong> — status, the Boca blender (approval/cost/timeline), the <strong>new 6-year lease commenced 01-Dec-2025</strong> at a site slated for exit, $15.9MM NBV disposition, contingency replacement, <strong>severance</strong> (54 FTE still Active, none run) · <strong>Site-code key</strong> incl. the unmapped <strong>UM42</strong> and codes for Hazleton/Sparks; Bayport 35 asset limb</td>
+</tr>
+</tbody>
+</table></div>
+<h3>11.4 VDR-INTEGRITY REPOSTS</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>Item</th>
+  <th>Defect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>22b</strong></td>
+  <td><strong><code>1.1.4.4</code> Second A&amp;R IATA is unopenable</strong> — a <code>.docx</code> posted with a <code>.pdf</code> extension. <strong>The operative version of the perimeter agreement has never been read.</strong> Blocking</td>
+</tr>
+<tr>
+  <td>#58 / #60</td>
+  <td>The separation-spine mislabels (IATA duplicate as Vol 3; rLTMA as &quot;TSA Methodology&quot;; the CIP as the TSA form)</td>
+</tr>
+<tr>
+  <td>Note</td>
+  <td><code>1.3.32</code> and <code>1.13.6</code> carry doubled extensions (<code>.xlsx (1).xlsx</code>) — open, but flag the class</td>
+</tr>
+<tr>
+  <td>Note</td>
+  <td><code>1.3.38</code> stacks two QoE vintages with inconsistent duplication — naive totals <strong>double-count FY25 by ~$680MM</strong> (decoded and validated; no repost needed, but the defect class matters)</td>
+</tr>
+<tr>
+  <td>Note</td>
+  <td>Eleven 7.25.26 files filed under 1.8 belong to 1.3/1.5/1.13; the census roll-forwards and Amerilab R&amp;D exist <strong>only</strong> in the staging folder — the filed tree has no node for them</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="s-12-ares-internal-actions-not-part-of-the-seller-ask">12 · ARES INTERNAL ACTIONS (not part of the seller ask)</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>#</th>
+  <th>Item</th>
+  <th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>A6</strong></td>
+  <td><strong>Reset any indicative leverage given on $164MM — before the sponsor anchors.</strong> 5.0x on $164MM = $820MM = <strong>8.0x on the corrected base</strong></td>
+  <td><strong>▲ URGENT — the only genuinely time-sensitive item in this package</strong></td>
+</tr>
+<tr>
+  <td><strong>A8</strong></td>
+  <td><del>Source or drop the &quot;known Costco private-label losses&quot; intelligence.</del> <strong>CLOSED AT REVISION 2 — SOURCED AND TRUE.</strong> The sponsor's own lender model carries <strong>&quot;2026 Costco Private Label Loss – Gross Profit&quot;</strong> at <strong>$(27.55)MM (2025) / $(29.88)MM (2026)</strong> across <strong>four SKUs</strong> (row 62, fn 6); corroborated independently by MPG p 6 (<em>&quot;NB's recent PL loss&quot;</em>). <strong>It is no longer intelligence and no longer quarantined — it enters the base and takes corrected EBITDA to ~$75MM.</strong> See Addendum B §4.0–4.1</td>
+  <td><strong>● CLOSED</strong></td>
+</tr>
+<tr>
+  <td><strong>A4</strong></td>
+  <td>Check <strong>Ares' own Circana/MULO entitlement</strong> before raising the syndicated-data redaction with the seller — the constraint appears to be Circana licensing, not Nestlé confidentiality, and the target itself holds a Circana contract. This is also the practical fallback for #69</td>
+  <td>Open — elevated</td>
+</tr>
+<tr>
+  <td><strong>A7</strong></td>
+  <td>Modelled close date <strong>H1-2027</strong> (working). Resolve the calendar-anchored &quot;TSA 2026–2028&quot; vs contract-anchored &quot;18–24 months post-close&quot; tension the moment the TSA form lands — if the end is calendar-anchored and close slips, <strong>the runway compresses</strong></td>
+  <td>Open</td>
+</tr>
+<tr>
+  <td><strong>A5</strong></td>
+  <td><strong>Sponsor identity — ADVANCED SUBSTANTIALLY AT REV 2, but the original caution still stands.</strong> Yellow Wood is now evidenced as an <strong>active bidder arranging debt</strong>, not merely a recipient of materials: a <strong><code>YW Lender Datapack</code></strong> was prepared for lenders (9 Jul), and the lender model's own footnotes read <em>&quot;<strong>YW assumption</strong> of the stranded overhead costs mitigation&quot;</em> (fns 1, 5). Watermarks appear throughout the CIP and Management Presentation. <strong>Separately, the sell-side bank is now evidenced as Morgan Stanley</strong> — the Management Presentation carries the Morgan Stanley &amp; Co. LLC provision disclaimer (18 occurrences), corroborating a claim previously discounted as unreliable. <strong>Neither fact is publicly reported, and none of it proves YW is the <em>winning</em> bidder</strong> — a lender datapack is prepared by bidders who lose as well as bidders who win</td>
+  <td>Advanced — sponsor and bank evidenced; &quot;winning bidder&quot; still unproven</td>
+</tr>
+<tr>
+  <td><strong>A3</strong></td>
+  <td>Output-template alignment with Hawk / Accelerate — <strong>checked directly: neither sister deal contains an IC memo or template.</strong> Direction still required if a house format is wanted</td>
+  <td>Open</td>
+</tr>
+<tr>
+  <td>A1 / A2 / A9</td>
+  <td>Capital-structure position (1L + sponsor equity — answered) · facility sizing (resolved: $410–575MM recommendation) · normalized-EBITDA bridge and attachment math (delivered: $155 → $128 → $103; every $10MM of base moves the 1L ~$45–50MM at 4.5–5.0x)</td>
+  <td>Closed</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<hr />
+<h1 id="s-part-v-evidence-base-integrity-amp-caveats" class="part">PART V — EVIDENCE BASE, INTEGRITY &amp; CAVEATS</h1>
+<hr />
+<h2 id="s-13-hypothesis-verdicts-final">13 · HYPOTHESIS VERDICTS — FINAL</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>ID</th>
+  <th>Hypothesis</th>
+  <th>Verdict</th>
+  <th>Decisive evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>H1</strong></td>
+  <td>Category/share erosion</td>
+  <td><strong>SUPPORTED</strong></td>
+  <td>As-shipped growth stopped in FY25 ($1,094.6→$1,094.0MM); Jan–May-26 −1.6% on record 39.0% trade rates; NB losing share (−0.165pt) in a growing category; growth concentrated in trend SKUs past their velocity peak; food and drug channels in structural retreat; Target exited</td>
+</tr>
+<tr>
+  <td><strong>H2</strong></td>
+  <td>Retailer concentration</td>
+  <td><strong>SUPPORTED — the dominant risk in the file</strong></td>
+  <td>Costco <strong>36.8% of NNS / 29.5% of MC</strong> across two economic models (brand + Kirkland PL); top-3 = 68.9% of NNS; top-5 = 80.5% of MC; e-commerce ≡ Amazon; single items to $33MM MC; <strong>plus the labor limb — 68.3% of heads in one metro</strong></td>
+</tr>
+<tr>
+  <td><strong>H3</strong></td>
+  <td>Standalone cost / TSA cliff</td>
+  <td><strong>STRONGLY SUPPORTED — QUANTIFIED, AND CORROBORATED BY THE BUYER [Rev 2]</strong></td>
+  <td>One-time <strong>$90–120MM vs seller $44MM</strong> — the sponsor's own model carries <strong>$116.6MM</strong> ($90MM TSA/one-time + $11.6MM Costco mitigation + $15MM gummy consolidation capex), still footnoted <em>&quot;subject to further diligence&quot;</em>; TSA 18–24m vs an ERP the CIP itself says takes 2–3 years, while the sponsor simultaneously models IT spend <strong>falling 28% in year one</strong>; a <strong>$(28.0)MM</strong> ERP safety-stock build in 2028; <strong>no SAPA / TSA form / schedules / pricing at any ID</strong>; DC surgery uncosted by the seller's own tracker; retention $2.3MM/22 people excluding the seconded leadership</td>
+</tr>
+<tr>
+  <td><strong>H4</strong></td>
+  <td>Adjusted EBITDA inflated</td>
+  <td><strong>SUPPORTED — EXTENDED AT CLOSE</strong></td>
+  <td>FY24 +$69.1MM of which $22–38MM rejectable on source; $9.3MM unearned savings in the &quot;actual&quot;; waste contradiction; <strong>and the inter-vintage +$4.4MM through the two least-supported routes</strong></td>
+</tr>
+<tr>
+  <td><strong>H5</strong></td>
+  <td>Deferred capex / co-man dependency</td>
+  <td><strong>SUPPORTED — QUANTIFIED</strong></td>
+  <td>Maintenance plan at <strong>39–58% of factory depreciation</strong> with a trough to $13–15MM; pre-2021 machinery 78% depreciated and running; $14MM AUC pipeline; Prescott $15.9MM unimpaired; the co-man cost model is <code>#REF!</code>-severed from its source</td>
+</tr>
+<tr>
+  <td><strong>H6</strong></td>
+  <td>Input cost / pricing power</td>
+  <td><strong>ADVANCED — realized-price leg only</strong></td>
+  <td>Book trade rate 32.6→<strong>39.0%</strong> in three years; Walmart's more than doubled to 40.4%; EDLP 3.2→7.2% of gross. Input leg untestable — shared supply contracts sweep to Nestlé by IATA definition</td>
+</tr>
+<tr>
+  <td><strong>H7</strong></td>
+  <td>Benefits/labor step-up</td>
+  <td><strong>SUPPORTED — PARTIALLY QUANTIFIED</strong></td>
+  <td>Factory baseline <strong>$38.18MM at 33.9% load</strong>; step-up <strong>$6–18MM p.a. ≈ 9% of base EBITDA</strong>; salaried limb unevidenced (<strong>#29 blocking</strong>)</td>
+</tr>
+<tr>
+  <td><strong>H8</strong></td>
+  <td>Structural/legal recourse</td>
+  <td><strong>SUPPORTED — FOUR INSTANCES</strong></td>
+  <td>Indemnity extinguishes at Closing and <strong>cannot be pledged</strong>; §1.1502-6 group-tax tail; Desjardins non-assignable and self-funded; Deerland marks licensed from a Nestlé entity; seven co-man agreements re-papered mid-process</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="s-14-structural-amp-legal-findings-what-the-transaction-docume">14 · STRUCTURAL &amp; LEGAL FINDINGS — WHAT THE TRANSACTION DOCUMENTS ACTUALLY SAY</h2>
+<p><em>Source: A&amp;R IATA (Execution Version, eff. 1 Jul 2026) and corporate records. <strong>Caveat: the operative document is the Second A&amp;R IATA at <code>1.1.4.4</code>, which is unopenable (22b) — everything here must be re-verified against it.</strong></em></p>
+<ul>
+<li><strong>The reorganisation is a two-way swap, not a one-way carve-out</strong>, sequenced four minutes apart (12:01 / 12:05 a.m.): Navigate assets in, Non-Navigate assets out for <strong>6,600 NHCN common shares</strong>, real estate via separate transfer documents, <strong>Hazleton DC out immediately before the Navigate Closing</strong>.</li>
+<li><strong>F2 — Nestlé's indemnity extinguishes the moment Ares' borrower comes into existence</strong> (§5.4); reps have no survival (§5.1); indemnity claims are <strong>expressly non-assignable — including to lenders</strong> (§5.5). Meanwhile §2.9 leaves inside the target: all its trade payables (including Non-Navigate), all pre-closing liabilities of the facilities transferred <em>out</em>, and <strong>all of its Tax Liabilities</strong>.</li>
+<li><strong>Tax is a first-order structural issue.</strong> The Navigate leg is intended as a taxable §301/§311 distribution under the consolidated-return regs; deconsolidation — which the Closing <em>is</em> — exposes deferred intercompany gain to acceleration, and the target remains <strong>severally liable for the entire Nestlé group's federal income tax</strong> for every membership year (§1.1502-6). <strong>Zero tax documents exist in the room</strong> against this exposure, and the DTL ran off $124.3→$79.5MM flattering historic profit.</li>
+<li><strong>Contract sweep asymmetry:</strong> the buyer receives only contracts relating <em>exclusively</em> to Navigate; anything touching the Non-Navigate business &quot;in whole or in part&quot; — <strong>including all Shared Contracts and any supply contract also feeding a Nestlé site</strong> — leaves with Nestlé. The target emerges holding <strong>one IT contract: a Shopify invoice.</strong></li>
+<li><strong>Consent failure is priced against the buyer</strong> (§2.14): closing happens regardless; pass-through benefit ends at the contract's <strong>first expiration without extensions</strong>; Nestlé need not litigate, pay, or remain secondarily liable; the buyer indemnifies Nestlé for the failure.</li>
+<li><strong>F4 — Nuun's equity sits outside the entity being sold</strong> (under NIMCO US, Inc.) and <strong>no transfer document exists anywhere in the room.</strong> $57MM of sales; the #1 electrolyte-tablet brand.</li>
+<li><strong>F5 — the two-way swap's only external valuation check is a KPMG AG appraisal dated 26 June 2026 that is not in the VDR.</strong> Both sides of the IATA were signed by the same Nestlé officers; there was no arm's-length negotiation. Load-bearing for any fraudulent-conveyance analysis.</li>
+<li><strong>Governance void at Day 1:</strong> member-managed, no directors; <strong>every officer of all three target entities is a retained Nestlé employee who resigns at closing</strong> — Treasurer, six Assistant Treasurers, Corporate Controller, Head of Tax, Senior Tax Counsel, Director of Risk Management. The registered head office (Bridgewater NJ) is a Nestlé site outside the perimeter.</li>
+<li><strong>Collateral notes:</strong> 16 properties with a complete title set; <strong>115 Orville Drive carries a Confirmatory Deed</strong> (title-curative — flag for title review); eight leased properties assigned out with <strong>landlord consent requested at only one (Savannah)</strong>; the <strong>Renaissance equipment master lease</strong> (2018) retains title with the lessor and its 2025 Participation Agreement names <strong>the target itself</strong> as the participating entity while the folder label says the lease is retained by Nestlé — schedules absent, quantum and location of the equipment unknown (#40); <strong>no IP schedules of any kind</strong>; UPC/GS1 registration scrambled across the group (#41).</li>
+<li>Transfer taxes on <strong>both</strong> IATA legs and the real-estate transfers are borne <strong>inside the target</strong> (§2.11); bulk-sales compliance is waived (§2.20); ongoing misdirected-receipts remittance is anticipated post-close (§2.19).</li>
+</ul>
+<hr />
+<h2 id="s-15-commercial-operational-amp-people-evidence-the-condensed-">15 · COMMERCIAL, OPERATIONAL &amp; PEOPLE EVIDENCE — THE CONDENSED RECORD</h2>
+<h3>15.1 Customer concentration (LTM May-26, seller's native databases — [VERIFIED to the penny])</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+  <th>Customer</th>
+  <th style="text-align:right">NNS $MM</th>
+  <th style="text-align:right">% NNS</th>
+  <th style="text-align:right">MC $MM</th>
+  <th style="text-align:right">% MC</th>
+  <th>Jan–May-26 vs 25</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>US Costco</td>
+  <td style="text-align:right">398.8</td>
+  <td style="text-align:right"><strong>36.8%</strong></td>
+  <td style="text-align:right">166.1</td>
+  <td style="text-align:right"><strong>29.5%</strong></td>
+  <td>+8.0% (no adjustments — genuine)</td>
+</tr>
+<tr>
+  <td>Amazon</td>
+  <td style="text-align:right">186.7</td>
+  <td style="text-align:right">17.2%</td>
+  <td style="text-align:right">113.1</td>
+  <td style="text-align:right">20.1%</td>
+  <td><strong>−13.7%</strong> (the FY25 +35% load unwinding)</td>
+</tr>
+<tr>
+  <td>Walmart</td>
+  <td style="text-align:right">161.6</td>
+  <td style="text-align:right">14.9%</td>
+  <td style="text-align:right">88.2</td>
+  <td style="text-align:right">15.7%</td>
+  <td>+5.9% QoE / <strong>+25.0% as-shipped</strong>, consumption-backed</td>
+</tr>
+<tr>
+  <td>Walgreens</td>
+  <td style="text-align:right">76.3</td>
+  <td style="text-align:right">7.0%</td>
+  <td style="text-align:right">47.6</td>
+  <td style="text-align:right">8.5%</td>
+  <td>+37.4% on a shrinking assortment (254→~160 SKUs)</td>
+</tr>
+<tr>
+  <td>CVS</td>
+  <td style="text-align:right">70.0</td>
+  <td style="text-align:right">6.5%</td>
+  <td style="text-align:right">34.1</td>
+  <td style="text-align:right">6.0%</td>
+  <td><strong>−42.2%</strong></td>
+</tr>
+<tr>
+  <td>Kroger</td>
+  <td style="text-align:right">52.3</td>
+  <td style="text-align:right">4.8%</td>
+  <td style="text-align:right">32.7</td>
+  <td style="text-align:right">5.8%</td>
+  <td>−6.3%</td>
+</tr>
+<tr>
+  <td><strong>Top 3 / Top 5 / Top 10</strong></td>
+  <td style="text-align:right"></td>
+  <td style="text-align:right"><strong>68.9 / 82.4 / 93.1%</strong></td>
+  <td style="text-align:right"></td>
+  <td style="text-align:right"><strong>— / 80.5 / 93.6%</strong></td>
+  <td></td>
+</tr>
+</tbody>
+</table></div>
+<p>Costco is simultaneously the <strong>#1 branded customer</strong> ($206MM NB + $15.6MM OBF) and the <strong>#1 private-label customer</strong> ($177.3MM Kirkland, $54.3MM MC) — 36.8% of the book behind one merchant, spanning brand-equity and cost-plus-bid economics, with <strong>zero Costco documentation in the room</strong>. Single Kirkland items: CoQ10 $48.1MM NNS / <strong>$33.0MM MC at 68.6%</strong>; the top NBTY item (Mg Glycinate 180ct) alone is 5.1% of book NNS.</p>
+<p><strong>Trade is buying the growth:</strong> book gross-to-net widened 32.6% → <strong>39.0%</strong> in three years; Walmart 17.0% → <strong>40.4%</strong>; CVS ships at 60–69%; EDLP allowances ran $50.6 → $138.1MM (3.2% → 7.2% of gross) — permanent price investment, not promotion. <strong>Jan–May-26 NNS fell −1.6% <em>despite</em> the heaviest trade rate in the dataset.</strong></p>
+<p><strong>The pro-forma layer reshapes history:</strong> −$58.2MM was excised from FY23 vs −$7.9MM from FY25, manufacturing a &quot;flat-to-growing&quot; shape; <strong>as-shipped growth stopped in FY25</strong> before any adjustment. Walmart's FY25 &quot;+43.9%&quot; is +14.7% as shipped — the rest is a pro-forma TPD construction.</p>
+<h3>15.2 Operations, capex, marketing, distribution</h3>
+<ul>
+<li><strong>Site key decoded</strong> (UM02 Bayport/CapsuleWorks · UM04 Bohemia · UM06 Grundy · UM07 90 Orville · UM14 Boca · UM16 Prescott · UM17 San Antonio; <strong>UM42 unmapped</strong>, present in internal files only). NBV by cluster: Bohemia/Orville <strong>$85.8MM</strong> · San Antonio <strong>$58.9MM</strong> · Bayport <strong>$45.4MM</strong> · Boca <strong>$39.3MM</strong> · Grundy $23.6MM · Prescott $15.9MM.</li>
+<li><strong>Capex reality:</strong> seller maintenance plan 20/20/18/<strong>15/13/15</strong> vs <strong>$34.5MM factory depreciation</strong> = 39–58% coverage; the seller's <em>entire</em> network-optimization programme (Boca blender, Arizona elimination, gummy-line relocation, liquids outsourcing, packaging upgrades) is priced at <strong>$3.5MM / 1 year</strong> — with <strong>no headcount limb</strong>, no severance run at Prescott, and a fresh <strong>6-year Prescott lease signed 01-Dec-2025</strong> at the site slated for exit. [ARES VIEW: $20–25MM p.a. + $15–30MM catch-up.]</li>
+<li><strong>Co-man architecture:</strong> all 7 Navigate plants also manufacture <em>for</em> Nestlé; <strong>Leonia is the sole RemainCo plant supporting Navigate</strong> — and doubles as a named contingency site for Bohemia 105. Nuun = <strong>Amerilab + Capstone</strong> (0% in-house; a rebate mechanic sits in the pricing exhibit); NB gummies partly offshore at <strong>Otmuchow (Poland)</strong>; <strong>SCI Logistics is RemainCo-contaminated</strong> (Atrium/Vital Proteins SOWs in the Navigate folder); <strong>the cost model and the contract set describe different supply bases</strong> — six modelled names have no contract, ~20 contracted names are absent from the model.</li>
+<li><strong>Marketing:</strong> perimeter PFME ~<strong>$117MM</strong> (9.5% of sales); tail-brand dependence OBF <strong>18.1%</strong> / Nuun <strong>28.7%</strong> / GARD <strong>21.3%</strong> of sales; <strong>78.3% of PO spend sits with two agencies (WPP $40.5MM + Flywheel $37.4MM)</strong>, and 54% is digital paid media pointed at the channel declining −14%. Agency master agreements presumably sit at Nestlé level — assignment question.</li>
+<li><strong>Distribution surgery mid-flight:</strong> US 3PL is a <strong>RemainCo (Geodis) contract</strong>; Hazleton→Holbrook swap and Sparks→Geodis-Reno consolidation are defined internally with <strong>costing &quot;Not started&quot;</strong> and buyer sub-contract support unconfirmed. Most sites — including Boca, San Antonio and Holbrook — have <strong>no contingency site at all</strong>.</li>
+</ul>
+<h3>15.3 People, labor, legal, regulatory</h3>
+<ul>
+<li><strong>Census 2,641</strong> (1,834 hourly + ~805 salaried) vs CIP 2,764 — gap ~123 unexplained. Base payroll <strong>$175.65MM</strong>. <strong>Long Island: 1,804 heads / 68.3% / $107.22MM payroll</strong>, coincident with ~42% of PP&amp;E NBV. Factory turnover runs <strong>13–40% by site</strong> — structurally high, not process-driven; <strong>RIF is excluded from the measure</strong>, blinding the file to any reduction activity.</li>
+<li><strong>NLRB — live organizing at Bayport (320 FTE, the softgel site):</strong> six charges, five at Bayport, filed Sep-2025 → May-2026 (29-CA-374928, -380746 Ronkonkoma, -380785, -381166, -386647, -387145), alleging coercive rules, <strong>interrogation about a union, surveillance and impression of surveillance</strong>, and 8(a)(3) discipline; latest alleged conduct <strong>23 Apr 2026</strong>; employer position statement 29 May 2026. Certification transfers to the buyer by successorship; no reserve is evidenced.</li>
+<li><strong>Severance:</strong> the Nestlé SSP (2 wks/yr, min 8 / max 52, VPs 52, COBRA to 18m) <strong>expressly excludes transaction-impacted employees</strong>, <strong>sunsets 31 Dec 2026</strong>, and does not cover Supply-Chain hourly. Indicative buyer exposure at the Nestlé formula: <strong>$27–54MM perimeter-wide</strong>, excluding COBRA, payroll tax, PTO and WARN pay-in-lieu; <strong>NYS WARN = 90 days</strong> at thresholds every NY site clears.</li>
+<li><strong>Retention: $2,316,404 across 22 people</strong> — 0.8% of the workforce against a 2–3-year separation, excluding the seconded Chief HR Officer, three Factory Directors, Head of IT &amp; Digital and VP Supply Chain, several of whom <strong>carry no salary in the perimeter cost base at all</strong>.</li>
+<li><strong>Canada:</strong> Desjardins ASO + stop-loss (No. 641071), Plan Sponsor The Nature's Bounty Co. (Winnipeg) — <strong>self-funded, both contracts expressly non-assignable</strong>, 120-day renewal / 60-day amendment notice, service suspension on debit balance, immediate stop-loss termination rights. The room holds Modification No. 1 only.</li>
+<li><strong>Litigation/regulatory:</strong> OBF efficacy (<strong>Whyble</strong>) live in the Second Circuit into Dec-2025 with no disclosed reserve, on the brand already spending 18.1% of sales to hold position; a 2026 false-advertising cluster; an <strong>enforced ICC award (ECMOHO)</strong> accepted by a Chinese court; recurring Prop 65 botanical settlements; <strong>six perpetual consent decrees</strong> binding the transferring entities; OSHA settlement + two state Rapid-Response investigations including San Antonio — the no-contingency PL gummy engine.</li>
+<li><strong>Amazon unit economics (redaction-verified):</strong> new-to-brand $5.15MM, returning $3.45MM, 67% repeat, LTV 1.67 — <strong>CAC removed</strong>, so LTV/CAC cannot be computed (#38).</li>
+</ul>
+<hr />
+<h2 id="s-16-market-context-external-public-source-research-separate-f">16 · MARKET CONTEXT — <span class="tag tag-external">EXTERNAL</span> public-source research, separate from VDR evidence</h2>
+<ul>
+<li><strong>Transaction reality-check:</strong> review announced 24 Jul 2025 (Freixe); reconfirmed Nov 2025 (Navratil); &quot;officially underway&quot; per Axios Pro (15 May 2026, three sources, <strong>~$150–160M EBITDA</strong> — bracketing the seller's $164/166 and well above our corrected $103); <strong>held-for-sale + CHF 1.3bn write-down at H1-26 results (23 Jul 2026)</strong> — the clearest hard evidence of Nestlé's own view that the asset is worth far less than the <strong>$5.75bn</strong> paid in 2021. Sell-side advisor unconfirmed in reliable reporting; no bid deadlines have surfaced.</li>
+<li><strong>Bidders:</strong> <strong>no reputable outlet names any bidder.</strong> Strategics have signalled disinterest (Unilever: science/tech-led only; GNC: inward-focused); PE is the likely buyer universe. <strong>Yellow Wood</strong> fits the archetype (Dr. Scholl's, Suave, ChapStick, Elida; $2.6bn AUM; Fund III $750M, 2022; typical checks $15–350M) but is <strong>publicly unconfirmed</strong> — and a ~$1.2–1.7bn EV would require co-invest or an outsized check from that fund, which bears on equity contribution.</li>
+<li><strong>Valuation frame [analyst framing, not a reported price]:</strong> branded VMS has traded ~9–12x; a declining mass-market asset prices at the low end or below; 8–11x on ~$155M suggests <strong>~$1.2–1.7bn EV</strong>. A circulated €3–4bn figure traces to an unreliable source and is not relied upon.</li>
+<li><strong>Financing backdrop:</strong> record 2025 direct-lending buyout volume ($81.4bn); average unitranche LBO leverage <strong>~5.7x</strong>; median PE acquisition spread <strong>S+475</strong>, modal band S+450–499; <strong>H1-2026 stress</strong> (US–Iran conflict, AI-driven software-credit reassessment, BDC redemption pressure) widened spreads <strong>+25–100bps</strong> and tightened structures. Public consumer-health comp Prestige runs ~2.4x.</li>
+<li><strong>Category:</strong> global supplements growing ~8.9% CAGR — <strong>concentrated in premium/science-backed</strong>, squeezing mainstream (McKinsey's &quot;clinical over clean&quot;). Sector shakeout underway: Church &amp; Dwight sold VitaFusion/L'il Critters to Piping Rock (Dec 2025, $40–45M after-tax charge); Vitamin Shoppe changed hands. FTC history is live: the 2023 Bountiful &quot;review-hijacking&quot; order ($600k) — and an unverified <strong>2025 Bountiful order</strong> sits in the room (#18).</li>
+<li><strong>Do not conflate</strong> this process with Nestlé's separately reported waters disposal (Platinum Equity et al.) — different transaction, different parties. USD/CHF near parity through 2025–26; confirm FX where precision matters.</li>
+</ul>
+<hr />
+<h2 id="s-17-vdr-integrity-data-quality-amp-sensitive-materials">17 · VDR INTEGRITY, DATA QUALITY &amp; SENSITIVE MATERIALS</h2>
+<blockquote class="bq bq-warn">
+<p><strong>⚠ SENSITIVE — handle before anything else in this section:</strong> the room contains <code>1.8.2.8.1.7</code> — an <strong>UNREDACTED, UNDER-SEAL</strong> exhibit from the Whyble/Osteo litigation. It has <strong>not been opened</strong> in this engagement and should not be. <strong>Route to counsel; do not circulate.</strong></p>
+</blockquote>
+<p><strong>The room as posted does not support a legal review.</strong> Every <code>.docx</code> tested in the transaction-documents section is a watermarked PDF (and <code>1.1.4.4</code> is the reverse); nothing can be redlined; the SAPA is absent; the operative IATA is unopenable; the TSA does not exist at any ID.</p>
+<p><strong>Standing evidentiary disciplines applied throughout (and recommended for any follow-on work):</strong></p>
+<ul>
+<li><strong>A filename establishes that a document exists — nothing else.</strong> Two &quot;_Redacted&quot; files showed no detectable redaction; the &quot;SAPA&quot; was a UPC agreement; the &quot;Roll-forward Census&quot; contains no roll-forward; the &quot;TSA form&quot; is the CIP. Content-verify before citing.</li>
+<li><strong>The databook governs over the CIP</strong> where they conflict; seller analysis is evidence to be tested, never adopted; every figure carries a file/tab/cell source; <strong>ranges over points</strong>; extra-room intelligence quarantined; the VDR was never modified.</li>
+<li><strong>Known defect classes:</strong> doubled extensions; stacked QoE vintages that double-count FY25 by ~$680MM if filtered naively; <code>#REF!</code> severance from unposted source workbooks; misfiled 7.25.26 documents; staging-only files invisible to the filed index; unreadable low-resolution org charts; section numbering that skips 1.6 and 1.12.</li>
+</ul>
+<p><strong>The VDR is live.</strong> Everything in this package is stamped to the <strong>7.23.26 / 7.25.26</strong> drops, re-verified as the latest at close of work. <strong>A new drop changes conclusions and must be delta-indexed before any figure here is reused.</strong></p>
+<p><strong>Assumption disclosures:</strong> all interest figures assume a market SOFR level not evidenced in the room, applied to a working 1L frame ($700–775MM) that is itself <strong><span class="tag tag-quarantine">EXTRA-ROOM — QUARANTINED</span></strong> and used only as a reference point to test against. Close date H1-2027 is a working assumption (A7). The corrected-EBITDA salaried-benefits limb is a scaling assumption pending #29.</p>
+<hr />
+<h2 id="s-18-methodology-amp-engagement-standard">18 · METHODOLOGY &amp; ENGAGEMENT STANDARD</h2>
+<p><strong>Process.</strong> Eight phases, executed sequentially against the live VDR: (0) full index of <strong>1,306 files across 350 folders</strong>, gap map, redaction verification; (1) perimeter and collateral from the transaction documents; (2) independent EBITDA rebuild from the native datacube — every adjustment rated accept/haircut/reject; (3) separation cost built bottom-up against the (absent) seller spine; (4) commercial durability from the native customer databases, reproduced <strong>to the penny</strong> against the seller's own reconciliation tabs; (5) operations, capex and asset coverage from the Dec-25 asset listing; (6) people, legal and regulatory; (7) synthesis, model, recovery and this package — <strong>re-run in full at Revision 2 on the sponsor and marketing materials</strong>. Eight risk hypotheses (H1–H8) tracked with explicit state transitions; findings numbered C1–C87; every request numbered and consolidated into the single ask above.</p>
+<p><strong>Standard.</strong> Decision-grade: no inferred figures presented as facts; seller-prepared analysis tested, never adopted; every number sourced to file, tab and cell; uncertainty stated, not smoothed; <strong>a flagged gap beats a confident guess.</strong> Where this package states a range, the range is the finding.</p>
+<p><strong>Underlying working papers</strong> (available to Ares on request): <code>PHASE_0</code>–<code>PHASE_7</code> analysis files (Phase 7 incl. §14, the Revision 2 re-run) · <code>ADDENDUM_B_SPONSOR_MATERIALS.md</code> · <code>MASTER_REQUEST_REGISTER.md</code> · <code>PHASE_7_MODEL_GRID_R2.csv</code> (governing) and <code>PHASE_7_MODEL_GRID.csv</code> (Rev 1, audit) · <code>PHASE_0_VDR_INDEX.xlsx</code> · <code>STATUS.md</code>.</p>
+<p>@@HEAVYRULE@@
+<strong>◆ creditswan.ai</strong> · Project Navigate · Final Package · 26 July 2026, Revision 2 — 27 July 2026 · VDR 7.23.26 / 7.25.26 + Sponsor &amp; Marketing Materials
+<em>Decision-grade credit diligence. Every number carries a source. A flagged gap beats a guess.</em></p>
+<hr class="heavy">
+
+</main>
+<script>
+(function(){var b=document.getElementById('pbar');function u(){var h=document.documentElement,s=h.scrollTop||document.body.scrollTop,m=h.scrollHeight-h.clientHeight;b.style.width=(m>0?(s/m*100):0)+'%';}addEventListener('scroll',u,{passive:true});u();})();
+</script>
+</body>
+</html>
